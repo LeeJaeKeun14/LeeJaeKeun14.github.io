@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>확률분포의_추론 | Lee&#39;s Atelier</title>
+  <meta name="keywords" content=" 기초통계 ">
+  <meta name="description" content="확률분포의_추론 | Lee&#39;s Atelier">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Lee JaeKeun of the Coding, by the Coding, for the Coding Atrlier 마크다운 수학 파이썬 데이터베이스 프로젝트">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lee&#39;s Atelier">
+<meta property="og:url" content="http:&#x2F;&#x2F;leejaekeun14.github.io&#x2F;about&#x2F;index.html">
+<meta property="og:site_name" content="Lee&#39;s Atelier">
+<meta property="og:description" content="Lee JaeKeun of the Coding, by the Coding, for the Coding Atrlier 마크다운 수학 파이썬 데이터베이스 프로젝트">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-17T05:48:27.943Z">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>이재근</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="github" href="https://github.com/LeeJaeKeun14" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="email" href="mailto:ljkean14@gmail.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">모든내용</div></li> 
+    
+        
+            
+            <li><div data-rel="Modul">Modul<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Database"><i class="fold iconfont icon-right"></i>Database<small>(4)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="RDBMS">RDBMS<small>(2)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="NoSQL">NoSQL<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Math"><i class="fold iconfont icon-right"></i>Math<small>(9)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="기초통계">기초통계<small>(3)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="최적화">최적화<small>(3)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="선형대수">선형대수<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="엔트로피">엔트로피<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="SQLD">SQLD<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="단축키">단축키<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="spark">spark<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="머신러닝">머신러닝<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="시각화">시각화<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="프로잭트"><i class="fold iconfont icon-right"></i>프로잭트<small>(1)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="서울시인구예측">서울시인구예측<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="전처리"><i class="fold iconfont icon-right"></i>전처리<small>(1)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="텍스트">텍스트<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a class="about  hasFriend  site_url"  href="/about">about</a><a style="width: 50%"  class="friends">friend</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="25">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        친구목록
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="Search..." autocomplete="off"id="local-search-input" >
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">Sympy</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">Database</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">MySQL</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">Mongodb</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">Math</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">SQLD</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">자격증</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">전처리</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">마크다운</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">빅데이터</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">단축키</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">분류모형</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">시각화</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">기초통계</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">최적화</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">선형대수</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">라그랑주_승수법</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">프로젝트</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">엔트로피</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">텍스트</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">NLTK</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">wordcloud</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class=""
+           href="/2020/04/30/%EB%B8%94%EB%A1%9C%EA%B7%B8%EA%B4%80%EB%A6%AC/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="블로그관리">블로그관리</span>
+            <span class="post-date" title="2020-04-29 15:27:54">2020/04/29</span>
+        </a>
+        
+        <a  class="Modul "
+           href="/2019/10/27/Modul-Sympy-00/"
+           data-tag="Sympy"
+           data-author="" >
+            <span class="post-title" title="Sympy">Sympy</span>
+            <span class="post-date" title="2019-10-26 15:51:10">2019/10/26</span>
+        </a>
+        
+        <a  class="Database "
+           href="/2019/11/01/Database-Database/"
+           data-tag="Database,MySQL,Mongodb"
+           data-author="" >
+            <span class="post-title" title="Database">Database</span>
+            <span class="post-date" title="2019-11-01 11:17:45">2019/11/01</span>
+        </a>
+        
+        <a  class="Math "
+           href="/2019/10/29/Math-Math-list/"
+           data-tag="Math"
+           data-author="" >
+            <span class="post-title" title="Math_list">Math_list</span>
+            <span class="post-date" title="2019-10-29 13:17:10">2019/10/29</span>
+        </a>
+        
+        <a  class="SQLD "
+           href="/2020/09/22/SQLD-sqld-00/"
+           data-tag="SQLD,자격증"
+           data-author="" >
+            <span class="post-title" title="sqld_00">sqld_00</span>
+            <span class="post-date" title="2020-09-21 19:43:16">2020/09/21</span>
+        </a>
+        
+        <a  class="Modul "
+           href="/2019/11/19/Modul-%EC%A0%84%EC%B2%98%EB%A6%AC-%ED%8C%A8%ED%82%A4%EC%A7%80/"
+           data-tag="전처리"
+           data-author="" >
+            <span class="post-title" title="전처리_패키지">전처리_패키지</span>
+            <span class="post-date" title="2019-11-18 18:10:54">2019/11/18</span>
+        </a>
+        
+        <a  class="단축키 "
+           href="/2019/10/28/%EB%8B%A8%EC%B6%95%ED%82%A4-markdown/"
+           data-tag="마크다운"
+           data-author="" >
+            <span class="post-title" title="마크다운 문법">마크다운 문법</span>
+            <span class="post-date" title="2019-10-28 13:49:57">2019/10/28</span>
+        </a>
+        
+        <a  class="spark "
+           href="/2020/01/09/spark-spark-1/"
+           data-tag="빅데이터"
+           data-author="" >
+            <span class="post-title" title="spark_1">spark_1</span>
+            <span class="post-date" title="2020-01-09 12:50:52">2020/01/09</span>
+        </a>
+        
+        <a  class="단축키 "
+           href="/2020/05/02/%EB%8B%A8%EC%B6%95%ED%82%A4-vs-code/"
+           data-tag="단축키"
+           data-author="" >
+            <span class="post-title" title="vs_code">vs_code</span>
+            <span class="post-date" title="2020-05-01 18:39:20">2020/05/01</span>
+        </a>
+        
+        <a  class="머신러닝 "
+           href="/2020/01/09/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D-%EB%B6%84%EB%A5%98%EC%84%B1%EB%8A%A5/"
+           data-tag="분류모형"
+           data-author="" >
+            <span class="post-title" title="분류성능">분류성능</span>
+            <span class="post-date" title="2020-01-08 17:26:53">2020/01/08</span>
+        </a>
+        
+        <a  class="시각화 "
+           href="/2020/04/30/%EC%8B%9C%EA%B0%81%ED%99%94-%EC%8B%9C%EA%B0%81%ED%99%94/"
+           data-tag="시각화"
+           data-author="" >
+            <span class="post-title" title="시각화">시각화</span>
+            <span class="post-date" title="2020-04-29 15:25:47">2020/04/29</span>
+        </a>
+        
+        <a  class="머신러닝 "
+           href="/2020/01/05/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D-%EB%B6%84%EB%A5%98%EB%AA%A8%ED%98%95/"
+           data-tag="분류모형"
+           data-author="" >
+            <span class="post-title" title="분류모형">분류모형</span>
+            <span class="post-date" title="2020-01-04 16:14:25">2020/01/04</span>
+        </a>
+        
+        <a  class="Database RDBMS "
+           href="/2019/11/01/Database-RDBMS-%EC%BF%BC%EB%A6%AC%EB%AC%B8-%EA%B8%B0%EC%B4%88/"
+           data-tag="Database,MySQL"
+           data-author="" >
+            <span class="post-title" title="쿼리문_기초">쿼리문_기초</span>
+            <span class="post-date" title="2019-11-01 11:56:13">2019/11/01</span>
+        </a>
+        
+        <a  class="Database NoSQL "
+           href="/2019/11/04/Database-NoSQL-mongodb/"
+           data-tag="Database,Mongodb"
+           data-author="" >
+            <span class="post-title" title="Mongodb_01">Mongodb_01</span>
+            <span class="post-date" title="2019-11-04 14:12:03">2019/11/04</span>
+        </a>
+        
+        <a  class="Math 기초통계 "
+           href="/2019/11/13/Math-%EA%B8%B0%EC%B4%88%ED%86%B5%EA%B3%84-%EA%B2%80%EC%A0%95%EA%B3%BC-%EC%9C%A0%EC%9D%98%ED%99%95%EB%A5%A0/"
+           data-tag="기초통계"
+           data-author="" >
+            <span class="post-title" title="검정과_유의확률">검정과_유의확률</span>
+            <span class="post-date" title="2019-11-12 18:01:48">2019/11/12</span>
+        </a>
+        
+        <a  class="Math 기초통계 "
+           href="/2019/11/10/Math-%EA%B8%B0%EC%B4%88%ED%86%B5%EA%B3%84-%ED%99%95%EB%A5%A0%EB%B6%84%ED%8F%AC/"
+           data-tag="기초통계"
+           data-author="" >
+            <span class="post-title" title="확률분포">확률분포</span>
+            <span class="post-date" title="2019-11-10 14:55:58">2019/11/10</span>
+        </a>
+        
+        <a  class="Math 기초통계 "
+           href="/2019/11/13/Math-%EA%B8%B0%EC%B4%88%ED%86%B5%EA%B3%84-%ED%99%95%EB%A5%A0%EB%B6%84%ED%8F%AC%EC%9D%98-%EC%B6%94%EB%A1%A0/"
+           data-tag="기초통계"
+           data-author="" >
+            <span class="post-title" title="확률분포의_추론">확률분포의_추론</span>
+            <span class="post-date" title="2019-11-12 15:00:50">2019/11/12</span>
+        </a>
+        
+        <a  class="Database RDBMS "
+           href="/2019/11/04/Database-RDBMS-%EC%BF%BC%EB%A6%AC%EB%AC%B8-%EC%9D%91%EC%9A%A9/"
+           data-tag="Database,MySQL"
+           data-author="" >
+            <span class="post-title" title="쿼리문_응용">쿼리문_응용</span>
+            <span class="post-date" title="2019-11-04 14:09:53">2019/11/04</span>
+        </a>
+        
+        <a  class="Math 최적화 "
+           href="/2019/11/18/Math-%EC%B5%9C%EC%A0%81%ED%99%94-%EC%B5%9C%EC%A0%81%ED%99%94-%EA%B8%B0%EC%B4%88/"
+           data-tag="최적화"
+           data-author="" >
+            <span class="post-title" title="최적화_기초">최적화_기초</span>
+            <span class="post-date" title="2019-11-18 13:19:33">2019/11/18</span>
+        </a>
+        
+        <a  class="Math 선형대수 "
+           href="/2019/11/10/Math-%EC%84%A0%ED%98%95%EB%8C%80%EC%88%98-PCA/"
+           data-tag="선형대수"
+           data-author="" >
+            <span class="post-title" title="PCA">PCA</span>
+            <span class="post-date" title="2019-11-10 14:47:27">2019/11/10</span>
+        </a>
+        
+        <a  class="Math 최적화 "
+           href="/2019/11/18/Math-%EC%B5%9C%EC%A0%81%ED%99%94-%EB%9D%BC%EA%B7%B8%EB%9E%91%EC%A3%BC-%EC%8A%B9%EC%88%98%EB%B2%95/"
+           data-tag="최적화,라그랑주_승수법"
+           data-author="" >
+            <span class="post-title" title="라그랑주_승수법">라그랑주_승수법</span>
+            <span class="post-date" title="2019-11-18 14:35:34">2019/11/18</span>
+        </a>
+        
+        <a  class="프로잭트 서울시인구예측 "
+           href="/2020/03/31/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%84%9C%EC%9A%B8%EC%8B%9C%EC%9D%B8%EA%B5%AC%EC%98%88%EC%B8%A1-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/"
+           data-tag="빅데이터,프로젝트"
+           data-author="" >
+            <span class="post-title" title="프로젝트_01">프로젝트_01</span>
+            <span class="post-date" title="2020-03-30 15:21:19">2020/03/30</span>
+        </a>
+        
+        <a  class="Math 최적화 "
+           href="/2019/11/19/Math-%EC%B5%9C%EC%A0%81%ED%99%94-%EC%B5%9C%EC%A0%81%ED%99%94-%EB%AC%B8%EC%A0%9C/"
+           data-tag="최적화"
+           data-author="" >
+            <span class="post-title" title="최적화_문제">최적화_문제</span>
+            <span class="post-date" title="2019-11-18 15:19:38">2019/11/18</span>
+        </a>
+        
+        <a  class="Math 엔트로피 "
+           href="/2019/11/13/Math-%EC%97%94%ED%8A%B8%EB%A1%9C%ED%94%BC-%EC%97%94%ED%8A%B8%EB%A1%9C%ED%94%BC%EC%9D%98-%EC%A0%95%EC%9D%98/"
+           data-tag="엔트로피"
+           data-author="" >
+            <span class="post-title" title="엔트로피_정의">엔트로피_정의</span>
+            <span class="post-date" title="2019-11-12 21:10:51">2019/11/12</span>
+        </a>
+        
+        <a  class="전처리 텍스트 "
+           href="/2020/01/04/%EC%A0%84%EC%B2%98%EB%A6%AC-%ED%85%8D%EC%8A%A4%ED%8A%B8-NLTK-%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/"
+           data-tag="전처리,텍스트,NLTK,wordcloud"
+           data-author="" >
+            <span class="post-title" title="자연어처리">자연어처리</span>
+            <span class="post-date" title="2020-01-03 15:44:54">2020/01/03</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-Math-기초통계-확률분포의-추론" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">확률분포의_추론</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a href="javascript:" data-rel="Math">Math</a>/
+            
+                <a href="javascript:" data-rel="기초통계">기초통계</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color5">기초통계</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        작성시간:<time class="date" title='更新时间: 2020-01-03 06:39:36'>2019-11-12 15:00</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            조회수:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#기초통계-02"><span class="toc-text">기초통계 02</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#확률분포의-추론"><span class="toc-text">확률분포의 추론</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#확률분포의-결정"><span class="toc-text">확률분포의 결정</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#모수-추정-방법론"><span class="toc-text">모수 추정 방법론</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#모멘트-방법"><span class="toc-text">모멘트 방법</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#최대가능도-추정법"><span class="toc-text">최대가능도 추정법</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#베이즈-추정법"><span class="toc-text">베이즈 추정법</span></a></li></ol></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-4 i,
+    .toc-level-4 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="기초통계-02"><a href="#기초통계-02" class="headerlink" title="기초통계 02"></a>기초통계 02</h2><ul>
+<li>확률분포의 추론<ul>
+<li>확률분포의 결정</li>
+</ul>
+</li>
+<li>모수 추정 방법론<ul>
+<li>모멘트 방법</li>
+<li>최대가능도 추정법</li>
+<li>베이즈 추정법</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="확률분포의-추론"><a href="#확률분포의-추론" class="headerlink" title="확률분포의 추론"></a>확률분포의 추론</h3><ul>
+<li>데이터 분석의 첫번째 가정.<br>‘분석하고자 하는 데이터가 어떤 확률변수로부터 실현된 표본이다’</li>
+</ul>
+<h4 id="확률분포의-결정"><a href="#확률분포의-결정" class="headerlink" title="확률분포의 결정"></a>확률분포의 결정</h4><ol>
+<li><p>확률변수가 어떤 확률분포를 따르는지 알아낸다</p>
+<ul>
+<li>데이터가 0, 1뿐이다<br>$\to$ 베르누이분포<br>데이터는 카테고리 값이어야 한다<br>$\to$ 카테고리분포<br>데이터는 0과 1사이의 실수 값이어야 한다<br>$\to$ 베타분포<br>데이터는 항상 0 또는 양수이어애 한다<br>$\to$ 로그정규분포, 감마분포, F분포, 카이제곱분포, 지수분포, 하프코시분포 등<br>데이터가 크기 제한이 없는 실수<br>$\to$ 정규분포, 스튜던트t분포, 코시분포, 라플라스분포 등</li>
+</ul>
+</li>
+<li><p>데이터로부터 해당 확률분포의 모수의 값을 구한다</p>
+<ul>
+<li>모수추정 방법론 : 모수의 값으로 가장 가능성이 높은 하나의 숫자를 찾아내는 작업</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="모수-추정-방법론"><a href="#모수-추정-방법론" class="headerlink" title="모수 추정 방법론"></a>모수 추정 방법론</h3><ul>
+<li>모멘트 방법</li>
+<li>최대가능도 추정법</li>
+<li>베이즈 추정법</li>
+</ul>
+<h4 id="모멘트-방법"><a href="#모멘트-방법" class="headerlink" title="모멘트 방법"></a>모멘트 방법</h4><ul>
+<li>method of moment : 표본자료에 대한 표본 모멘트가 확률분포의 이론적 모멘트와 같다고 생각하여 모수를 구한다<ul>
+<li>기댓값<script type="math/tex; mode=display">\mu = E[X] \triangleq \bar x = \frac{1}{N}\sum_{i = 1}^N x_i</script>위 식에서 N은 데이터의 개수, $x_i$는 표본 데이터다.</li>
+<li>분산<script type="math/tex; mode=display">\sigma^2 = E[(X -\mu)^2] \triangleq s^2 = \frac{1}{N-1} \sum_{i = 1}^N(x_i - \bar x)^2</script></li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>베르누이분포<ul>
+<li>$\mu$<script type="math/tex; mode=display">E[X] = \mu  \triangleq \bar x = \frac{1}{N}\sum_{i = 1}^Nx_i = \frac{N_1}{N}</script></li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>카테고리분포<ul>
+<li>$\mu_k$<script type="math/tex; mode=display">\mu_k = \frac{N_k}{N}</script></li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>정규분포<ul>
+<li>$\mu$<script type="math/tex; mode=display">E[X] = \mu \triangleq \bar x = \frac{1}{N}\sum_{i = 1}^Nx_i</script></li>
+<li>$\sigma^2$<script type="math/tex; mode=display">E[(X - \mu)^2] = \sigma^2 \triangleq s^2 = \frac{1}{N-1}\sum_{i=1}^N(x_i - \bar x)^2</script></li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>베타분포<ul>
+<li>$\mu$<script type="math/tex; mode=display">E[X] = \frac{a}{a+b} \triangleq \bar x</script></li>
+<li>$\sigma^2$<script type="math/tex; mode=display">E[(X - \mu)^2] = \frac{ab}{(a+b)^2(a + b + 1)} \triangleq s^2</script>이 연립방정식을 풀면<script type="math/tex; mode=display">a = \bar x\left(\frac{\bar x(1 - \bar x)}{s^2} - 1\right)</script><script type="math/tex; mode=display">b = (1 - \bar x)\left(\frac{\bar x(1 - \bar x)}{s^2} - 1\right)</script></li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>다변수정규분포<ul>
+<li>$\mu$<script type="math/tex; mode=display">\mu = \frac{1}{N}\sum_{i = 1}^Nx_i = \bar x</script></li>
+<li>$\Lambda^{-1}$<script type="math/tex; mode=display">\Lambda^{-1} = \Sigma = \frac{1}{N}\sum_{i = 1}^N(x_i - \bar x)(x_i - \bar x)^T</script></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="최대가능도-추정법"><a href="#최대가능도-추정법" class="headerlink" title="최대가능도 추정법"></a>최대가능도 추정법</h4><ul>
+<li><p>가능도함수(likelihood function)<br>확률분포 X에 대한 확률밀도함수(확률질량함수)를 다음으로 정의한다</p>
+<script type="math/tex; mode=display">p(x;\theta)</script><p>이때 x를 알고있는 상수계수로 놓고 $\theta$를 변수로 계산하는 함수를 가능도 함수라고 한다</p>
+<ul>
+<li><p>확률밀도함수에서 모수를 변수로 보는 경우에 이 함수를 가능도함수(likelihood function)라고 한다.</p>
+<script type="math/tex; mode=display">L(\theta; x) = p(x;\theta)</script></li>
+<li><p>확률밀도함수는 적분하면 전체 면적이 1이 되지만, 가능도함수는 가능한 모든 모숫값 $\theta$에 대해 적분했을 떄 1이 된다는 보장이 없다</p>
+<script type="math/tex; mode=display">\int_{-\infty}^{\infty}L(\theta ;x)d\theta = \int_{-\infty}^{\infty}p(x;\theta)d\theta \neq 1</script></li>
+<li><p>가능도함수와 확률밀도 함수</p>
+<ul>
+<li>확률밀도함수 f(x;$\theta$)<ul>
+<li>$\theta$ 값을 이미 알고 있음</li>
+<li>$\theta$는 상수, x는 변수</li>
+<li>$\theta$가 이미 정해져 있는 상황에서 x값의 상대적 확률</li>
+<li>적분하면 전체 면적은 항상 1</li>
+</ul>
+</li>
+<li>가능도함수 L($\theta$) = p(x|$\theta$)<ul>
+<li>x가 이미 발생. 값을 이미 알고 있음</li>
+<li>x는 상수, $\theta$는 변수</li>
+<li>x가 이미 정해져 있는 상황에서 $\theta$값의 상대적 확률</li>
+<li>적분하면 전체 면적이 1이 아닐 수 있다.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>카테고리분포의 최대가능도 모수 추정</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p>최대 가능도 추정법</p>
+<ul>
+<li>Maximum Likelihood Estimation(MLE)<br> 주어진 표본에 대해 가능도를 가장 크게하는 모스 $\theta$를 찾는 방법<script type="math/tex; mode=display">\hat\theta_{MLE} = \arg\max_{\theta}L(\theta;x)</script></li>
+</ul>
+</li>
+<li><p>복수의 표본 데이터가 있는 경우의 가능도함수</p>
+<script type="math/tex; mode=display">L(\theta;x_1,\dots,x_N) = p(x_1,\dots,x_N;\theta) = \prod_{i = 1}^Np(x_i;\theta)</script></li>
+<li><p>로그가능도함수</p>
+<ul>
+<li>일반적으로 최대가능도 추정법을 사용하여 가능도가 최대가 되는 $\theta$를 계산하려면 수치적 최적화를 해야한다<script type="math/tex; mode=display">\hat\theta_{ML} = \arg\max_{\theta}L(\theta;\{x_i\})</script></li>
+<li>이때 곱으로 나타나는경우를 로그변환을 이용하여 덧셈계산으로 단순해 진다(LL = log L)<script type="math/tex; mode=display">\hat\theta_{ML} = \arg\max_{\theta}\log L(\theta;\{x_i\})</script></li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p>베르누이 분포의 최대가능도 모수 추정</p>
+<ul>
+<li><p>모수가 $\mu$인 베르누이 분포의 확률질량함수는 다음과 같다</p>
+<script type="math/tex; mode=display">p(x;\mu) = Bern(x;\mu) = \mu^x(1 - \mu)^{1 - x}</script></li>
+<li><p>N번 반복 시행으로 표본 데이터가 $x_1, \dots, x_N$이 있는 경우에는 모두 독립이므로 전체 확률질량함수는 각각의 확률질량함수의 곱과 같다.</p>
+<script type="math/tex; mode=display">L(\mu;x_1,\dots,x_N) = p(x_1, \dots,x_N;\mu) = \prod_{i = 1}^N\mu^{x_i}(1 - \mu)^{1 - x_i}</script></li>
+<li><p>미분을 쉽게 하기 위해 로그 변환을 하여 로그가능도를 구하면 다음과 같다.</p>
+<script type="math/tex; mode=display">\begin{aligned}
+ \log L &= \log p(x_1, \dots, x_N; \mu)\\
+ &= \sum_{i = 1}^N\{x_i\log\mu + (1 - x_i)\log(1 - \mu)\}\\
+ &= \sum_{i = 1}^Nx_i\log\mu + \left(N - \sum_{i = 1}^Nx_i\right)\log(1 - \mu)\\
+ \end{aligned}</script></li>
+<li><p>x = 1(성공) 또는 x = 0(실패) 이므로 횟수를 다음과 같이 표기한다.</p>
+<script type="math/tex; mode=display">N_1 = \sum_{i = 1}^2x_i, N_0 = N - \sum_{i = 1}^Nx_i</script><p> 로그가능도는 다음과 같아진다.</p>
+<script type="math/tex; mode=display">\log L = N_1 \log \mu + N_0 \log( 1 -\mu)</script><p> 이 목적함수를 모수로 미분한 값이 0이 되게 하는 모수값을 구하면 다음과 같다</p>
+<script type="math/tex; mode=display">\frac{\partial\log L}{\partial \mu} = \frac{\partial}{\partial \mu}\{N_1\log\mu + \N_0 \log(1 - \mu)\} = 0\\
+ = \frac{N_1}{\mu} - \frac{N_0}{1 - \mu} = 0\\
+ \frac{N_1}{\mu} = \frac{N_0}{1 - \mu}\\
+ \frac{1 - \mu}{\mu} = \frac{N_0}{N_1} = \frac{N - N_1}{N_1}\\
+ \mu = \frac{N_1}{N}</script><blockquote>
+<p>최대가능도 추정법에 의한 베르누이분포의 모수는 1이 나온 횟수와 전체 시행횟수의 비율이다.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="베이즈-추정법"><a href="#베이즈-추정법" class="headerlink" title="베이즈 추정법"></a>베이즈 추정법</h4><ul>
+<li><p>Bayesian estimation<br>모수값이 가질 수 있는 모든 가능성의 분포를 계산하는 작업</p>
+</li>
+<li><p>베이즈 추정법의 기본 원리</p>
+<script type="math/tex; mode=display">p(\mu | x_1,\dots,x_N) = \frac{p(x_1,\dots,x_N)\cdot p(\mu)}{p(x_1,\dots,x_N)} \propto p(x_1,\dots,x_N | \mu)\cdot p(\mu)</script><script type="math/tex; mode=display">모수의 사후분포 \propto 가능도분포 \cdot 모수의 사전분포</script><ul>
+<li>p($\mu$) : 모수의 사전분포<br> 베이지안 추정 작업전 이미 알고있는 $\mu$의 분포를 뜻한다. 모수나 분포에 대해 지식이 없을경우 균일분포 Beta(1,1)이나 무정보분포인 정규분포N(0,$\sigma^2$)을 사용한다</li>
+<li>p($\mu|x_1,\dots,x_N$) : 모수의 사후분포<br> 데이터가 주어진 상태에서의 $\mu$에 대한 조건부 확률 분포 이다</li>
+<li>p($x_1,\dots,x_N|\mu$) : 가능도(likelihood)분포<br> 모수 $\mu$가 특정한 값으로 주어졌을 때 주어진 데이터가 나올 수 있는 확률값을 나타낸다</li>
+</ul>
+<ol>
+<li>모수적(parametric) 방법<br>모수 분포를 표현하는 확률분포함수의 모수를 하이퍼모수라 하는데 이를 계산하는 작업</li>
+<li>비모수적(non parametric) 방법<br>MCMC(Markov chain Monte Carlo)와 같은 몬테카를로 방법이 있다</li>
+</ol>
+</li>
+</ul>
+<hr>
+<ul>
+<li>베르누이분포의 모수 추정<script type="math/tex; mode=display">p(\mu) \propto \mu^{a-1}(1 - \mu)^{b-1} \;\;\;(a = 1,b = 1)</script><ul>
+<li>데이터는 모두 독립적인 베르누이 분포의 곱이므로 가능도 함수는 다음과 같다<script type="math/tex; mode=display">p(x_1,\dots,x_N | \mu) = \prod_{i=1}^N\mu^{x_i}(1-\mu)^{1 - x_1}</script></li>
+<li>베이즈 정리를 사용하면 사후분포가 다음처럼 갱신된 하이퍼모수 $a’, b’$를 가지는 또다른 베타분포가 된다.<script type="math/tex; mode=display">\begin{aligned}
+p(\mu | x_1,\dots,x_N) &\propto p(x_1,\dots, x_N | \mu)p(\mu)\\
+&= \prod_{i = 1}^N\mu^{x_i}(1-\mu)^{1-x_i}\cdot \mu^{a-1}(1-\mu)^{b-1}\\
+&= \mu^{a' -1}(1 - \mu)^{b' -1}
+\end{aligned}</script>이러한 사전분포를 켤레 사전확률분포(conjugate prior)라고 한다</li>
+<li>갱신된 하이퍼 모수값<script type="math/tex; mode=display">a' = N_1 + a</script><script type="math/tex; mode=display">b' = N_0 + b</script></li>
+<li>또한 베이즈 추정법의 장점은 순차적(sequential)계산이 가능하다는 점이다</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>카테고리분포의 모수 추정<ul>
+<li>클래스 개수가 K인 카테고리분포의 모수 $\mu$벡터를 베이즈 추정법으로 추정해보자.<script type="math/tex; mode=display">p(\mu) \propto \prod_{k = 1}^K\mu_k^{\alpha_k -1}\;\;(\alpha_k = 1,\;for\;all\;k)</script>데이터는 모두 독립인 카테고리 분포이므로<script type="math/tex; mode=display">p(x_1,\dots,x_N | \mu) = \prod_{i = 1}^N\prod_{k=1}^K\mu_k^{x_{i,k}}</script>베이즈 정리로 사후 분포를 구하면 다음과 같이 갱신된 하이퍼모수 $\alpha’_i$를 가지는 디리클리분포가 된다<script type="math/tex; mode=display">\begin{aligned}
+ p(\mu | x_1,\dots,x_N) &\propto p(x_1,\dots,x_N | \mu)p(\mu)\\
+ &= \prod_{i=1}^N\prod_{k=1}^K\mu_k^{x_{i,k}}\dot\prod_{k=1}^K\mu_k^{\alpha_k - 1}\\
+ &= \prod_{k=1}^K\mu^{\alpha_k'-1}\\
+ \end{aligned}</script>결과가 디리클리분포가 켤레분포임을 알 수 있다</li>
+<li>갱신된 하이퍼 모수값<script type="math/tex; mode=display">\alpha_k' = N_k + \alpha_k</script></li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>정규분포의 기댓값 모수 추정</li>
+</ul>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 여기가 끝입니다. </span>
+    </div>
+</article>
+
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">문서제목:</span>확률분포의_추론</p>
+    
+    <p><span class="copy-title">본문저자:</span><a href="javascript:void(0)" title="이재근">이재근</a></p>
+    <p><span class="copy-title">작성시간:</span>2019-11-12, 15:00:50</p>
+    <p><span class="copy-title">최후수정:</span>2020-01-03, 06:39:36</p>
+    <span class="copy-title">원본링크:</span><a class="post-url" href="/2019/11/13/Math-%EA%B8%B0%EC%B4%88%ED%86%B5%EA%B3%84-%ED%99%95%EB%A5%A0%EB%B6%84%ED%8F%AC%EC%9D%98-%EC%B6%94%EB%A1%A0/" title="확률분포의_추론">http://leejaekeun14.github.io/2019/11/13/Math-%EA%B8%B0%EC%B4%88%ED%86%B5%EA%B3%84-%ED%99%95%EB%A5%A0%EB%B6%84%ED%8F%AC%EC%9D%98-%EC%B6%94%EB%A1%A0/</a>
+</div>
+
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">(c) 2019 - 2020 LeeJaeKeun14</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme <a href="http://yelog.org/" target="_blank">yelog</a>  </p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">본문내용</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" href="javascript:void(0)"></a>
+    </div>
+</div>
+<div class="acParent"></div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#Sympy','#Database','#MySQL','#Mongodb','#Math','#SQLD','#자격증','#전처리','#마크다운','#빅데이터','#단축키','#분류모형','#시각화','#기초통계','#최적화','#선형대수','#라그랑주_승수법','#프로젝트','#엔트로피','#텍스트','#NLTK','#wordcloud',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #A1C7F4;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("/img/menu.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
