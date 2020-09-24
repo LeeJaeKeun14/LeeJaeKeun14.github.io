@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>sqld-정답 | Lee&#39;s Atelier</title>
+  <title>sqld_02 | Lee&#39;s Atelier</title>
   <meta name="keywords" content=" SQLD , 자격증 , 데이터베이스 ">
-  <meta name="description" content="sqld-정답 | Lee&#39;s Atelier">
+  <meta name="description" content="sqld_02 | Lee&#39;s Atelier">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="of the Coding, by the Coding, for the Coding Atrlier">
 <meta property="og:type" content="website">
@@ -627,9 +627,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-SQLD-sqld-정답" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-SQLD-sqld-02" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">sqld-정답</h1>
+        <h1 class="article-title">sqld_02</h1>
     
     <div class="article-meta">
         
@@ -655,7 +655,7 @@
     </div>
     <div class="article-meta">
         
-        작성시간:<time class="date" title='更新时间: 2020-09-23 13:18:56'>2020-09-23 22:14</time>
+        작성시간:<time class="date" title='更新时间: 2020-09-24 11:27:17'>2020-09-24 18:29</time>
         
     </div>
     <div class="article-meta">
@@ -677,7 +677,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#연습문제-1-정답"><span class="toc-text">연습문제 1 정답</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#관계형-데이터베이스란"><span class="toc-text">관계형 데이터베이스란</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#관계형-데이터베이스"><span class="toc-text">관계형 데이터베이스</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#관계형-모델"><span class="toc-text">관계형 모델</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#고객연락처-테이블-TABLE"><span class="toc-text">고객연락처 테이블(TABLE)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#관계형-데이터베이스의-혁신-성"><span class="toc-text">관계형 데이터베이스의 혁신 성</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#기능적-혁신-성"><span class="toc-text">기능적 혁신 성</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -693,10 +693,62 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="연습문제-1-정답"><a href="#연습문제-1-정답" class="headerlink" title="연습문제 1 정답"></a>연습문제 1 정답</h2><ul>
-<li>1번 : 4번</li>
-<li>2번 : 3번</li>
-<li>3번 : 1번</li>
+        <h2 id="관계형-데이터베이스란"><a href="#관계형-데이터베이스란" class="headerlink" title="관계형 데이터베이스란"></a>관계형 데이터베이스란</h2><h3 id="관계형-데이터베이스"><a href="#관계형-데이터베이스" class="headerlink" title="관계형 데이터베이스"></a>관계형 데이터베이스</h3><ol>
+<li>관계형 데이터베이스(Relational Database)는 키(key)와 값(value)들의 간단한 관계를 테이블화 시킨 매우 간단한 원칙의 전산정보 데이터베이스임 보통 RDB라고 불리고 있음</li>
+<li>2차원 표 이용한 데이터 목록화 관리를 하는 것이 주 목정임(Excel, Google 스프레드 시트)</li>
+<li>실세계를 그대로 반영함으로 직관적인 이해가 가능함(주소록, 출석부, 가계부 등)</li>
+<li>우리는 실생활에서 사용하는 모든 정보를 관계형 데이터베이스로 관리할 수 있음</li>
+</ol>
+<h3 id="관계형-모델"><a href="#관계형-모델" class="headerlink" title="관계형 모델"></a>관계형 모델</h3><ol>
+<li>관계형 모델(relational model)은 집합론에 기반을 둔 일종의 데이터베이스 모델임 이 모델은 에드거 커드(Edgar Codd)에 의해 최초로 제안되고 체계화되었음</li>
+<li>컬럼(열)과 로우(행)을 이루는 하나 이상의 테이블에 존재하고 테이블에 데이터가 저장됨</li>
+<li>각각의 테이블은 각각의 로우를 식별하는 기본 키(Primary Key)가 있음</li>
+<li>칼럼은 필드(Field)혹은 속성(Attribute)라고도 불림, 로우는 레코드 혹은 튜플(Tuple)로 불림</li>
+</ol>
+<h3 id="고객연락처-테이블-TABLE"><a href="#고객연락처-테이블-TABLE" class="headerlink" title="고객연락처 테이블(TABLE)"></a>고객연락처 테이블(TABLE)</h3><p>컴퓨터 과학에서, 튜플은 어떤 요소의 집합, 혹은 테이블에서의 행을 가리킨다(레코드와 동일한 의미)</p>
+<h3 id="관계형-데이터베이스의-혁신-성"><a href="#관계형-데이터베이스의-혁신-성" class="headerlink" title="관계형 데이터베이스의 혁신 성"></a>관계형 데이터베이스의 혁신 성</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">특징</th>
+<th style="text-align:left">설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">역사적 혁신성</td>
+<td style="text-align:left">최초로 2차원 표를 이용한 데이터베이스 소프트웨어</td>
+</tr>
+<tr>
+<td style="text-align:left">기능적 혁신성</td>
+<td style="text-align:left">직관적인 방법으로 데이터를 추출할 수 있음<br/>- SQL 언어를 이용한 간편한 데이터 추출<br/>- 데이터베이스 사용자 층의 빠른 증가에 기여<br/>- 개발 및 업무 생산성 확대</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="기능적-혁신-성"><a href="#기능적-혁신-성" class="headerlink" title="기능적 혁신 성"></a>기능적 혁신 성</h3><ul>
+<li>고객의 연락처 중 가운데 고객명 중 “경” 자가 들어가는 고객의 이메일 주소는 무엇인가?</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">프로그래밍적인 관점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1. “고객 연락처”가 저장되어있는 파일을 연다.<br/>2. 아래와 과정을 전체 라인에 대해 반복한다. “고객명” 항목에 “경” 자가 포함되어 있는지 체크 포함되어 있다면 “연락처 구분”이 “이메일” 인지 체크하여 만약 “이메일”이라면 “연락처”항목을 화면에 출력한다.<br/>3. “고객 연락처”파일을 닫는다</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>SQL관점</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> 연락처</span><br><span class="line"><span class="keyword">FROM</span> 고객연락처</span><br><span class="line"><span class="keyword">WHERE</span> 고객명 <span class="keyword">LIKE</span> <span class="string">"%경%"</span></span><br><span class="line"><span class="keyword">AND</span> 연락처구분 = <span class="string">"이메일"</span></span><br><span class="line">;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>SQL을 이용한 데이터 처리는 매우 직관적이고 사용자 편이성을 도모함</li>
 </ul>
 
       
@@ -707,12 +759,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">문서제목:</span>sqld-정답</p>
+    <p><span class="copy-title">문서제목:</span>sqld_02</p>
     
     <p><span class="copy-title">본문저자:</span><a href="javascript:void(0)" title="이재근">이재근</a></p>
-    <p><span class="copy-title">작성시간:</span>2020-09-23, 22:14:15</p>
-    <p><span class="copy-title">최후수정:</span>2020-09-23, 13:18:56</p>
-    <span class="copy-title">원본링크:</span><a class="post-url" href="/2020/09/24/SQLD-sqld-%EC%A0%95%EB%8B%B5/" title="sqld-정답">http://leejaekeun14.github.io/2020/09/24/SQLD-sqld-%EC%A0%95%EB%8B%B5/</a>
+    <p><span class="copy-title">작성시간:</span>2020-09-24, 18:29:29</p>
+    <p><span class="copy-title">최후수정:</span>2020-09-24, 11:27:17</p>
+    <span class="copy-title">원본링크:</span><a class="post-url" href="/2020/09/25/SQLD-sqld-02/" title="sqld_02">http://leejaekeun14.github.io/2020/09/25/SQLD-sqld-02/</a>
 </div>
 
 
