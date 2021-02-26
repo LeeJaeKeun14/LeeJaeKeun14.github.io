@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>부록_02_파이썬문법_함수_입출력 | Lee&#39;s Atelier</title>
+  <title>부록_04_파이썬문법_자신만의_알고리즘_노트 | Lee&#39;s Atelier</title>
   <meta name="keywords" content=" 코딩테스트 ">
-  <meta name="description" content="부록_02_파이썬문법_함수_입출력 | Lee&#39;s Atelier">
+  <meta name="description" content="부록_04_파이썬문법_자신만의_알고리즘_노트 | Lee&#39;s Atelier">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Lee JaeKeun of the Coding, by the Coding, for the Coding Atrlier 마크다운 수학 파이썬 데이터베이스 프로젝트">
 <meta property="og:type" content="website">
@@ -739,9 +739,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-코딩테스트-부록-02-파이썬문법-함수-입출력" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-코딩테스트-부록-04-파이썬문법-자신만의-알고리즘-노트" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">부록_02_파이썬문법_함수_입출력</h1>
+        <h1 class="article-title">부록_04_파이썬문법_자신만의_알고리즘_노트</h1>
     
     <div class="article-meta">
         
@@ -763,7 +763,7 @@
     </div>
     <div class="article-meta">
         
-        작성시간:<time class="date" title='更新时间: 2021-02-19 12:54:41'>2021-02-19 21:53</time>
+        작성시간:<time class="date" title='更新时间: 2021-02-26 12:59:17'>2021-02-26 21:56</time>
         
     </div>
     <div class="article-meta">
@@ -785,7 +785,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#함수"><span class="toc-text">함수</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#입출력"><span class="toc-text">입출력</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#자신만의-알고리즘-노트"><span class="toc-text">자신만의 알고리즘 노트</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -801,68 +801,30 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="함수"><a href="#함수" class="headerlink" title="함수"></a>함수</h2><p>함수는 프로그래밍에 있어서 굉장히 중요하다. 프로그래밍을 하다 보면, 똑같은 코드가 반복적으로 사용되어야 할 때가 많다. 함수를 사용하지 않으면 소스코드를 매번 일일이 작성해야 하므로, 소스코드가 길어지며 이로 인해 프로그램의 크기가 비효율적으로 커진다. 코딩 테스트에서 테스트 케이스$^{Test Case}$가 입력된 뒤에 테스트 케이스만큼 특정한 알고리즘을 수행한 결과를 반복적으로 출력하도록 요구하는 문제가 출제되는 경우가 많다. 이럴 때는 문제를 푸는 코드를 함수화하면 매우 효과적으로 풀 수 있다. 이처럼 동일한 알고리즘을 반복적으로 수행해야 할 때 함수는 중요하게 사용된다. 파이썬에서 함수의 구조는 다음과 같다. 함수를 작성할 때는 함수 내부에서 사용되는 변수의 값을 전달받기 위해 매개변수를 정의할 수 있다. 이후 함수에서 어떠한 값을 반환하고자 할 때는 return을 이용한다. 이때 함수에서 매개변수나 return문은 존재하지 않을 수도 있다.</p>
-<p>대표적인 함수의 예시인 더하기 기능을 제공하는 함수를 작성해보자.</p>
-<pre><code>def add(a, b):
-    return a + b
+        <h2 id="자신만의-알고리즘-노트"><a href="#자신만의-알고리즘-노트" class="headerlink" title="자신만의 알고리즘 노트"></a>자신만의 알고리즘 노트</h2><p>문제를 풀면서 자신만의 라이브러리를 만들어 관리하는 것은 매우 좋은 습관이다. 모르는 문제나 어려운 문제를 만났을 때는 문제를 복습하면서 반드시 소스코드를 정리하는 것을 추천한다. 한 발 더 나아가 이미 공부한 적이 있는 알고리즘도 틈날 때마다 소스코드를 보기 좋게 정리하는 습관을 들이자.</p>
+<p>예를 들어 2020년 카카오 기출문제인 ‘자물쇠와 열쇠’ 문제를 생각해보자. 이 문제를 풀기 위해서는 2차원 리스트를 회전하는 기능을 구현해야 한다. 이러한 문제에서 사용한 소스코드들은 무넺를 푼 뒤에 (맞혔다고 하더라도) 바로 문제를 풀이 사이트를 닫지 말고 본인만의 라이브러리 노트에 기록해서 해당 문제를 해결하기 위해 사용한 기능을 라이브러리화하는 것을 추천한다.</p>
+<p>소스코드는 개인 문서에 일일이 기록할 수도 있지만, 깃허브$^{GitHub}$와 같은 사이트에 기록하는 방법을 추천한다. 깃허브를 이용하면 버전별로 소스코드를 관리할 수 있고, 폴더별로 알고리즘의 종류를 나누어 정리할 수 있다. 팀으로 알고리즘을 공부한다면 팀원이 함께 깃허브 저장소를 관리할 수 있어 편리하다. 라이브러리를 만들 때는 단순히 함수만 작성하는 것보다 해당 함수의 사용 예시(방법)까지 같이 기록해 놓는 것을 추천한다. 앞서 언급한 2차원리스트(행렬)를 90도 회전시키는 함수예시는 다음과 같이 작성할 수 있을 것이다.</p>
+<pre><code>def rotate_a_matrix_by_90_degree(a):
+    row_length = len(a)
+    column_length = len(a[0])
 
-print(add(7, 3))
-</code></pre><p>10</p>
-<p>앞서 언급했듯이, 동일한 함수를 return문 없이 작성할 수도 있다. 다음 예시와 갗이 함수 안에서 결과까지 출력하도록 하는 경우 return문 없이 함수를 작성한다.</p>
-<pre><code>def add(a, b):
-    print(&quot;함수의 결과 :&quot;, a + b)
+    res = [[0] * row_length for _ in range(column_length)]
+    for r in range(row_length):
+        for c in range(column_length):
+            res[c][row_length - 1 - r] = a[r][c]
 
-add(3, 7)
-</code></pre><p>함수의 결과 : 10</p>
-<p>또한 함수를 호출하는 과정에서 다음과 같이 인자$^{Argument}$를 넘겨줄 때, 파라미터의 변수를 직접 지정해서 값을 넣을 수 있다. 예를 들어 함수 처리 과정에서 매개변수로 a, b가 사용될 때, 함수를 호출하는 라인에서 인자 a와 b를 지칭해서 각각 값을 넣을 수 있다. 이 경우 매개변수의 순서가 달라도 상관없다는 점이 특징이다.</p>
-<p>그리고 함수 안에서 함수 밖의 변수 데이터를 변경해야 하는 경우가 있다. 이때는 함수에서 global 키워드를 이용하면 된다. global키워드로 변수를 지정하면, 해당 함수에서는 지역 변수를 만들지 않고, 함수 바깥에 선언된 변수를 바로 참조하게 된다. 아래 예시에서는 a라는 변수를 함수 안에서도 동일하게 접근하여 값을 변경하고 있다. 이를 위해 global 키워드가 사용된 것을 확인할 수 있다.</p>
-<p>끝으로 파이썬에서는 람다 표현식$^{Lambda Express}$을 사용할 수 있다. 람다 표현식을 이용하면 함수를 매우 간단하게 작성하여 적용할 수 있다. 특정한 기능을 수행하는 함수를 한 줄에 작성할 수 있다는 점이 특징이다. 예를 들어 앞서 정의했던 add() 함수와 같은 간단한 함수를 정의해야 할 때는 다음처럼 람다 표현식을 효과적으로 사용할 수 있다. 이러한 람다식은 파이썬의 정렬 라이브러리를 사용할 때, 정렬 기준(Key)을 설정할 때에도 자주 사용된다. 자세한 내용은 6장 ‘정렬’을 확인해보도록 하자.</p>
-<pre><code>print((lambda a, b: a + b)(3, 7))
-</code></pre><p>10</p>
-<h2 id="입출력"><a href="#입출력" class="headerlink" title="입출력"></a>입출력</h2><p>알고리즘 문제 풀이의 첫 번째 단계는 데이터를 입력받는 것이다. 알고리즘 문제의 경우 적절한 입력이 주어졌을 때 그 입력을 받아서 적절한 알고리즘을 수행한 뒤의 결과를 출력하는 것을 요구하기 때문이다.<br>예를 들어 학생의 성적 데이터가 주어지고, 이를 내림차순으로 정렬한 결과를 출력하라는 문제를 만났다고 가정해보자. 일반적으로 입력 과정에서는 먼저 데이터의 개수가 첫 번째 줄에 주어지고, 처리할 데이터는 그다음 줄에 주어지는 경우가 많다, 즉, 첫 번째 줄에 학생의 수가 주어지고, 두 번째 줄에 학생의 정보가 주어지며, 정보는 공백으로 구분한다.</p>
-<p>대부분 문제에서 입력 예시와 출력 예시는 다음과 같은 형태를 보일 것이다</p>
-<p>입력 예시</p>
-<pre><code>5
-65 90 75 34 99
-</code></pre><p>출력 예시</p>
-<pre><code>99 90 75 65 34
-</code></pre><p>파이썬에서 데이터를 입력받을 때는 input()을 이용한다. input()의 경우 한 줄의 문자열을 입력 받도록 해준다. 만약 파이썬에서 입력받은 데이터를 정수형 데이터로 처리하기 위해서는 문자열을 정수로 바꾸는 int()함수를 사용해야 한다.</p>
-<p>그리고 여러 개의 데이터를 입력받을 때는 데이터가 공백으로 구분되는 경우가 많다. 그래서 입력받은 문자열을 띄어쓰기로 구분하여 각각 정수 자료형의 데이터로 저장하는 코드의 사용 빈도가 매우 높다. 이때는 list(map(int, input().split())) 을 이용하면 된다.</p>
-<p>이 코드는 정말 많이 사용되므로, 반드시 외우고 있어야 한다. 많은 문제는 공백, 혹은 줄 바꿈을 기준으로 데이터를 구분한다. C/C++ 에서 입력받은 함수인 scanf()는 이 둘을 모두 동일하게 처리한다. 하지만 파이썬에서는 구분자가 줄 바꿈인지 공백인지에 따라서 다른 처리를 요구한다. 줄 바꿈이라면 int(input())을 여러 번 사용하면 되는데, 공백이라면 이렇게 사용해야 하므로 구분해서 알아두자. 결과적으로 코딩 태스트에서 입력을 위해 사용되는 전형적인 소스코드는 다음과 같다.</p>
-<pre><code># (input)
-# 5
-# 65 90 75 34 99
+    return res
 
-n = int(input())
+a = [
+    [1, 2, 3, 4],
+    [5, 6, 7, 8],
+    [9, 10, 11, 12]
+]
 
-data = list(map(int, input().split()))
-
-data.sort(reverse = True)
-print(data)
-</code></pre><p>[99, 90, 75, 65, 34]</p>
-<p>공백으로 구분된 데이터의 개수가 많지 않다면, 단순히 map(int, input().split())을 이용하는 것도 가능하다. 예를 들어 문제에서 첫째 줄에 n, m, k가 공백으로 구분되어 입력된다는 내용이 명시되어 있다고 가정하자. 이 경우에는 다음과 같이 사용할 수 있다.</p>
-<pre><code># (input)
-# 3 5 6
-
-n, m, k = map(int, input().split())
-
-print(n, m, k)
-</code></pre><p>3 5 6</p>
-<p>또한 문제를 풀다보면 입력을 최대한 빠르게 받아야 하는 경우가 있다. 흔히 정렬, 이진 탐색, 최단 경로 문제의 경우 매우 많은 수의 데이터가 연속적으로 입력이 되곤 한다. 예를 들어 1,000만 대가 넘는 라인이 입력되는 경우, 입력을 받는 것만으로도 시간 초과를 받을 수 있다.(각 데이터가 공백으로 구분되어 입력되는 게 아니라, 한 줄마다 입력되는 경우도 존재한다.)</p>
-<p>그래서 사용하는 언어별로 입력을 더 빠르게 받는 방법을 알고 있어야 한다. C++에서는 cin을 이용해 입력을 받기보다, scanf()를 사용하는 것이 권장된다. 자바의 경우에도 문법은 다르지만 비슷한 양상을 보인다.</p>
-<p>파이썬도 마찬가지다. 입력의 개수가 많은 경우에는 단순히 input() 함수를 그대로 사용하지는 않는다. 파이썬의 기본 input() 함수는 동작 속도가 느려서 시간 초과로 오답 판정을 받을 수 있기 때문이다. 이 경우 파이썬의 sys 라이브러리에 정의되어 있는 sys.stdin.readline() 함수를 이용한다. sys 라이브러리는 다음과 같은 방식으로 사용하며 input() 함수와 같이 한 줄씩 입력받기 위해 사용한다.</p>
-<pre><code>import sys
-sys.stdin.readline().rstrip()
-</code></pre><p>sys 라이브러리를 사용할 때는 한 줄 입력을 받고 나서 rstrip() 함수를 꼭 호출해야 한다. readline()으로 입력하면 입력 후 엔터가 줄 바꿈 기호로 입력되는데, 이 공백 문자를 제거하려면 retrip() 함수를 사용해야 한다. 이 또한 짧은 코드이니 관행적으로 외워서 사용하자.</p>
-<pre><code># (input)
-# Hello World
-
-import sys
-
-data = sys.stdin.readline().rstrip()
-print(data)
-</code></pre><p>Hello World</p>
-<p>이상으로 간단히 파이썬에서의 입력 방법에 대해 알아보았다. 이제 출력 방법에 대해서 알아보자. 출력을 할 때는 print()를 이용하여 출력을 진행할 수 있다. print()는 변수나 상수를 매개변수로 입력받아 이를 표준 출력으로 출력한다. print()는 각 변수를 콤마(,) 구분하여 매개변수로 넣을 수 있는데, 이 경우 각 변수가 띄어쓰기로 구분되어 출력한다.</p>
+print(rotate_a_matrix_by_90_degree(a))
+</code></pre><p>[[9, 5, 1], [10, 6, 2], [11, 7, 3], [12, 8, 4]]</p>
+<p>실제로 알고리즘 대회를 준비하는 사람들은 대체로 자신만의 팀 노트를 만들고 있다. 필자도 알고리즘 대회나 기업 코딩 테스트를 위한 팀 노트를 관리하고 있다.</p>
+<p><a href="https://github.com/ndb796/Python-Competitve-Programming-Team-Notes" target="_blank" rel="noopener">노트</a></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 여기가 끝입니다. </span>
@@ -872,12 +834,12 @@ print(data)
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">문서제목:</span>부록_02_파이썬문법_함수_입출력</p>
+    <p><span class="copy-title">문서제목:</span>부록_04_파이썬문법_자신만의_알고리즘_노트</p>
     
     <p><span class="copy-title">본문저자:</span><a href="javascript:void(0)" title="이재근">이재근</a></p>
-    <p><span class="copy-title">작성시간:</span>2021-02-19, 21:53:59</p>
-    <p><span class="copy-title">최후수정:</span>2021-02-19, 12:54:41</p>
-    <span class="copy-title">원본링크:</span><a class="post-url" href="/2021/02/20/%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EB%B6%80%EB%A1%9D-02-%ED%8C%8C%EC%9D%B4%EC%8D%AC%EB%AC%B8%EB%B2%95-%ED%95%A8%EC%88%98-%EC%9E%85%EC%B6%9C%EB%A0%A5/" title="부록_02_파이썬문법_함수_입출력">http://leejaekeun14.github.io/2021/02/20/%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EB%B6%80%EB%A1%9D-02-%ED%8C%8C%EC%9D%B4%EC%8D%AC%EB%AC%B8%EB%B2%95-%ED%95%A8%EC%88%98-%EC%9E%85%EC%B6%9C%EB%A0%A5/</a>
+    <p><span class="copy-title">작성시간:</span>2021-02-26, 21:56:23</p>
+    <p><span class="copy-title">최후수정:</span>2021-02-26, 12:59:17</p>
+    <span class="copy-title">원본링크:</span><a class="post-url" href="/2021/02/27/%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EB%B6%80%EB%A1%9D-04-%ED%8C%8C%EC%9D%B4%EC%8D%AC%EB%AC%B8%EB%B2%95-%EC%9E%90%EC%8B%A0%EB%A7%8C%EC%9D%98-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EB%85%B8%ED%8A%B8/" title="부록_04_파이썬문법_자신만의_알고리즘_노트">http://leejaekeun14.github.io/2021/02/27/%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EB%B6%80%EB%A1%9D-04-%ED%8C%8C%EC%9D%B4%EC%8D%AC%EB%AC%B8%EB%B2%95-%EC%9E%90%EC%8B%A0%EB%A7%8C%EC%9D%98-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EB%85%B8%ED%8A%B8/</a>
 </div>
 
 
