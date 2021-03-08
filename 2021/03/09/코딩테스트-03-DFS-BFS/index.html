@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>최적화_기초 | Lee&#39;s Atelier</title>
-  <meta name="keywords" content=" 최적화 ">
-  <meta name="description" content="최적화_기초 | Lee&#39;s Atelier">
+  <title>03_DFS_BFS | Lee&#39;s Atelier</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="03_DFS_BFS | Lee&#39;s Atelier">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="of the Coding, by the Coding, for the Coding Atrlier">
 <meta property="og:type" content="website">
@@ -755,33 +755,19 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Math-최적화-최적화-기초" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-코딩테스트-03-DFS-BFS" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">최적화_기초</h1>
+        <h1 class="article-title">03_DFS_BFS</h1>
     
     <div class="article-meta">
         
         
         
-        <span class="book">
-            
-                <a href="javascript:" data-rel="Math">Math</a>/
-            
-                <a href="javascript:" data-rel="최적화">최적화</a>
-            
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="javascript:" class="color4">최적화</a>
-            
-        </span>
         
     </div>
     <div class="article-meta">
         
-        작성시간:<time class="date" title='更新时间: 2019-11-18 05:36:49'>2019-11-18 13:19</time>
+        작성시간:<time class="date" title='更新时间: 2021-03-08 08:45:53'>2021-03-08 17:45</time>
         
     </div>
     <div class="article-meta">
@@ -803,7 +789,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#최적화-기초"><span class="toc-text">최적화 기초</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#최적화-문제"><span class="toc-text">최적화 문제</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#그리드-서치"><span class="toc-text">그리드 서치</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#수치적-최적화"><span class="toc-text">수치적 최적화</span></a></li></ol></li></ol></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -819,92 +805,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="최적화-기초"><a href="#최적화-기초" class="headerlink" title="최적화 기초"></a>최적화 기초</h2><ul>
-<li>최적화 문제<ul>
-<li>그리드 서치</li>
-<li>수치적 최적화</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="최적화-문제"><a href="#최적화-문제" class="headerlink" title="최적화 문제"></a>최적화 문제</h3><ul>
-<li><p>최적화 문제는 함수의 $f$의 값을 최대화 혹은 최소화하는 변수 x의 값 $x^*$를 찾는 것이다.</p>
-<script type="math/tex; mode=display">x^* = \arg\max_x f(x)</script><script type="math/tex; mode=display">x^* = \arg\min_x f(x)</script><p>   이 값 $x^*$를 최적화 문제의 해(solution)이라고 한다.</p>
-<ul>
-<li>$f(X)$를<ul>
-<li>J : 목적함수(objective function)</li>
-<li>C : 비용함수(cost function)</li>
-<li>L : 손실함수(loss function)</li>
-<li>E : 오차함수(error function)</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h4 id="그리드-서치"><a href="#그리드-서치" class="headerlink" title="그리드 서치"></a>그리드 서치</h4><ul>
-<li><p>Grid search</p>
-<p>   목적함수의 값을 가장 작게 하는 x 위치를 찾는 최적화 문제.<br>   가능한 모든 x의 값을 넣어 보고 그중 가장 작은(큰) 값을 선택한다.</p>
-</li>
-</ul>
-<hr>
-<h4 id="수치적-최적화"><a href="#수치적-최적화" class="headerlink" title="수치적 최적화"></a>수치적 최적화</h4><ul>
-<li><p>numerical optimization</p>
-<p>   반복적 시행 착오(trial and error)에 의해 최적화 필요조건을 만족하는 $x^*$를 찾는 방법.</p>
-<p>   두 가지 알고리즘이 필요하다</p>
-<ul>
-<li>현제 위치 $x_k$가 최적점인지 판단하는 알고리즘</li>
-<li>어떤 위치 $x<em>k$를 시도한 뒤, 다음 번에 시돠할 위치 $x</em>{k+1}$을 찾는 알고리즘</li>
-</ul>
-</li>
-</ul>
-<hr>
-<ul>
-<li><p>기울기 필요조건</p>
-<p>   현재 위치가 최소점인지 아닌지 판단하는 알고리즘.</p>
-<p>   어떤 독립 변수 값 $x^<em>$가 최소점이려면 일단 값 $x^</em>$에서 함수의 기울기와 도함수$\frac{df}{dx}$값이 0이라는 조건을 만족해야 한다. 이를 기울기 필요조건 이라고 한다.</p>
-<script type="math/tex; mode=display">\frac{df(x)}{dx} = 0</script><p>   다변수 함수인 경우 모든 변수에 대한 편미분값이 0이어야 한다.</p>
-<script type="math/tex; mode=display">\frac{\partial f(x_1, x_2, \dots, x_N)}
-   {\partial x_1} = 0</script><script type="math/tex; mode=display">\frac{\partial f(x_1, x_2, \dots, x_N)}
-   {\partial x_2} = 0</script><script type="math/tex; mode=display">\dots</script><script type="math/tex; mode=display">\frac{\partial f(x_1, x_2, \dots, x_N)}
-   {\partial x_N} = 0</script><p>   즉</p>
-<script type="math/tex; mode=display">\nabla f = 0</script><p>   이때 그레디언트 벡터 $\nabla f$를 g라는 기호로 간단하게 표시한다</p>
-<script type="math/tex; mode=display">g = 0</script></li>
-</ul>
-<hr>
-<ul>
-<li><p>최대경사법 문제</p>
-<ul>
-<li><p>steepest Gradient Descent</p>
-<p> 현재 위치 $x<em>k$에서의 기울기 값 $g(x_k)$만을 이용하여 다음번 위치 $x</em>{k+1}$를 결정하는 방법이다</p>
-<script type="math/tex; mode=display">x_{k+1} = x_k - \mu\nabla f(x_k) = x_k - \mu g(x_k)</script><p> 만약 현재 위치가 $x_k$에서 기울기가 음수면 $g(x_k) &lt; 0$이므로 앞으로 진행하고 $x_k$에서 기울기가 양수면 $g(x_k) &gt; 0$이므로 뒤로 진행하게 되어 점점 낮은 위치로 옮겨간다.<br> 이때 $\mu$를 스텝 사이즈 라고 한다.</p>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-<ul>
-<li>2차 도함수를 사용한 뉴턴 방법<ul>
-<li>Newton method<br> 목적함수가 2차 함수라는 가정하에 한 번에 최저점을 찾는 방법이다. 그레디언트 벡터에 헤시안 행렬의 역행렬을 곱해서 방향과 거리가 변형된 그레디언트 벡터를 사용한다.<script type="math/tex; mode=display">x_{n+1} = x_n - [Hf(x_n)]^{-1}]\nabla f(x_n)</script></li>
-</ul>
-</li>
-</ul>
-<hr>
-<ul>
-<li><p>수치적 최적화 문제</p>
-<ul>
-<li><p>진동(oscillation)현상<br> 곡면의 모양이 계곡(valley)와 같이 생긴 경우, 즉 그레디언트 벡터가 최저점을 가리키고 있지 않은 경우 특정 구간에서 이동을 반복하는 현상.</p>
-</li>
-<li><p>전역 최적화 문제<br> 만약 함수가 복수의 국소 최저점을 가지고 있는 경우 수치적 최적화 방법으로 항상 전역 최저점에 도달 할 수 없다.</p>
-</li>
-<li><p>컨벡스 문제<br> 목적함수의 2차 도함수의 값이 항상 0 이상이 되는 영역에서만 정의된 최적화 문제를 컨벡스문제 라고 한다</p>
-<script type="math/tex; mode=display">\frac{\partial^2}{\partial x^2}f \geq 0</script><p> 다변수 목점함수의 경우에는 주어진 영역에서 헤시안 행렬이 항상 양의 준정부호이라는 조건이 된다.</p>
-<script type="math/tex; mode=display">x^THx \geq 0\;for\;all\;x</script><p> <strong>컨벡스 문제에서는 항상 전역 최저점이 존재한다.</strong></p>
-</li>
-</ul>
-</li>
-</ul>
-
+        
       
        <hr><span style="font-style: italic;color: gray;"> 여기가 끝입니다. </span>
     </div>
@@ -913,12 +814,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">문서제목:</span>최적화_기초</p>
+    <p><span class="copy-title">문서제목:</span>03_DFS_BFS</p>
     
     <p><span class="copy-title">본문저자:</span><a href="javascript:void(0)" title="이재근">이재근</a></p>
-    <p><span class="copy-title">작성시간:</span>2019-11-18, 13:19:33</p>
-    <p><span class="copy-title">최후수정:</span>2019-11-18, 05:36:49</p>
-    <span class="copy-title">원본링크:</span><a class="post-url" href="/2019/11/18/Math-%EC%B5%9C%EC%A0%81%ED%99%94-%EC%B5%9C%EC%A0%81%ED%99%94-%EA%B8%B0%EC%B4%88/" title="최적화_기초">http://leejaekeun14.github.io/2019/11/18/Math-%EC%B5%9C%EC%A0%81%ED%99%94-%EC%B5%9C%EC%A0%81%ED%99%94-%EA%B8%B0%EC%B4%88/</a>
+    <p><span class="copy-title">작성시간:</span>2021-03-08, 17:45:13</p>
+    <p><span class="copy-title">최후수정:</span>2021-03-08, 08:45:53</p>
+    <span class="copy-title">원본링크:</span><a class="post-url" href="/2021/03/09/%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-03-DFS-BFS/" title="03_DFS_BFS">http://leejaekeun14.github.io/2021/03/09/%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-03-DFS-BFS/</a>
 </div>
 
 
