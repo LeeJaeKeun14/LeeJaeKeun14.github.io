@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>01_그리드 | Lee&#39;s Atelier</title>
+  <title>05_이진_탐색 | Lee&#39;s Atelier</title>
   <meta name="keywords" content=" 코딩테스트 ">
-  <meta name="description" content="01_그리드 | Lee&#39;s Atelier">
+  <meta name="description" content="05_이진_탐색 | Lee&#39;s Atelier">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Lee JaeKeun of the Coding, by the Coding, for the Coding Atrlier 마크다운 수학 파이썬 데이터베이스 프로젝트">
 <meta property="og:type" content="website">
@@ -771,9 +771,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-코딩테스트-01-그리드" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-코딩테스트-05-이진-탐색" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">01_그리드</h1>
+        <h1 class="article-title">05_이진_탐색</h1>
     
     <div class="article-meta">
         
@@ -795,7 +795,7 @@
     </div>
     <div class="article-meta">
         
-        작성시간:<time class="date" title='更新时间: 2021-03-08 08:41:50'>2021-02-10 19:50</time>
+        작성시간:<time class="date" title='更新时间: 2021-03-22 14:26:12'>2021-03-22 16:53</time>
         
     </div>
     <div class="article-meta">
@@ -817,7 +817,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#예제-3-1-거스름돈"><span class="toc-text">예제 3-1 거스름돈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#큰수의-법칙"><span class="toc-text">큰수의 법칙</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#숫자-카드-게임"><span class="toc-text">숫자 카드 게임</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1이-될-때까지"><span class="toc-text">1이 될 때까지</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#평가"><span class="toc-text">평가</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-범위를-반씩-좁혀가는-탐색"><span class="toc-text">1. 범위를 반씩 좁혀가는 탐색</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#순차-탐색"><span class="toc-text">순차 탐색</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#이진-탐색-반으로-쪼개면서-탐색하기"><span class="toc-text">이진 탐색 : 반으로 쪼개면서 탐색하기</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -833,154 +833,152 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="예제-3-1-거스름돈"><a href="#예제-3-1-거스름돈" class="headerlink" title="예제 3-1 거스름돈"></a>예제 3-1 거스름돈</h2><ul>
-<li><p>당신은 음식점의 계산을 도와주는 점원이다. 카운터에는 거스름돈으로 사용할 500원, 100원, 50원, 10원짜리 동전이 무한히 존재한다고 가정한다. 손님에게 거슬러 줘야 할 돈이 N원일 때 거슬러 줘야 할 동전의 최소 개수를 구하라. 단, 거슬러 줘야 할 돈 N은 항상 10의 배수이다.</p>
-<pre><code>import time
-
-def time_count(func): 
-    def count_time(*arg):
-        start_time = time.time()
-        print(func(*arg))
-        print(&#39;걸린 시간 : &#39;, time.time() - start_time)
-    return count_time                          
-
-@time_count   
-def ex3_1(num):    
-    a, n = num // 500, num % 500
-    b, n = n // 100, n % 100
-    c, n = n // 50, n % 50
-    d = n // 10
-
-    return a + b + c + d
-
-@time_count  
-def ex3_1_0(num):
-
-    coin_types = [500, 100, 50, 10]
-    count = 0
-
-    for coin in coin_types:
-        count += num // coin
-        n %= coin
-
-    return count
-
-num = ex3_1(1680)
-</code></pre></li>
-</ul>
-<p>8<br>걸린 시간 :  0.0</p>
-<h2 id="큰수의-법칙"><a href="#큰수의-법칙" class="headerlink" title="큰수의 법칙"></a>큰수의 법칙</h2><ul>
-<li>첫쨰 줄에 N(2 &lt;= N &lt;= 1000), M(1 &lt;= M &lt;= 10,000), K(1 &lt;= K &lt;= 10,000)의 자연수가 주어지며, 각 자연수는 공백으로 구분한다.</li>
-<li>둘쨰 줄에 N개의 자연수가 주어진다. 각 자연수느 공백으로 구분한다. 단, 각각의 자연수는 1이상 10,000 이하의 수로 주어진다.</li>
-<li><p>입력으로 주어지는 K는 항상 M보다 작거나 같다.</p>
-</li>
-<li><p>첫째 줄에 동빈이의 큰 수의 법칙에 따라 더해진 값을 출력한다.</p>
-<pre><code>@time_count
-def q1(N, M, K, ls):
-    ls1 = ls.copy()
-    ls1.sort()
-
-    max_num1 = ls1[-1]
-    max_num2 = ls1[-2]
-    d = max_num1 - max_num2
-    count = 0
-
-    for _ in range(M):
-        count += max_num1
-
-    count -= d * (M // K)
-
-    return count
-
-q1(5, 8, 3, [2, 4, 5, 4, 6])
-</code></pre></li>
-</ul>
-<p>28<br>걸린 시간 :  0.0</p>
-<h2 id="숫자-카드-게임"><a href="#숫자-카드-게임" class="headerlink" title="숫자 카드 게임"></a>숫자 카드 게임</h2><p>숫자 카드 게임은 여러 개의 숫자 카드 중에서 가장 높은 숫자가 쓰인 카드 한 장을 뽑는 게임이다. 단, 게임의 룰을 지키며 카드를 뽑아야 하고 룰은 다음과 같다.</p>
-<ol>
-<li>숫자가 쓰인 카드들이 N $\times$ M 형태로 놓여 있다. 이때 N은 행의 개수를 의미하며, M은 열의 개수를 의미한다.</li>
-<li>먼저 뽑고자 하는 카드가 포함되어 있는 행을 선택한다.</li>
-<li>그다음 선택된 행에 포함된 카드들 중 가장 숫자가 낮은 카드를 뽑아야 한다.</li>
-<li>따라서 처음에 카드를 골라낼 행을 선택할 때, 이후에 해당 행에서 가장 숫자가 낮은 카드를 뽑을 것을 고려하여 최종적으로 가장 높은 숫자의 카드를 뽑을 수 있도록 전략을 세워야 한다.</li>
-</ol>
+        <h2 id="1-범위를-반씩-좁혀가는-탐색"><a href="#1-범위를-반씩-좁혀가는-탐색" class="headerlink" title="1. 범위를 반씩 좁혀가는 탐색"></a>1. 범위를 반씩 좁혀가는 탐색</h2><h3 id="순차-탐색"><a href="#순차-탐색" class="headerlink" title="순차 탐색"></a>순차 탐색</h3><p>이번 장에서는 리스트 내에서 데이터를 매우 빠르게 탐색하는 이진 탐색 알고리즘에 대해서 공부하겠다. 이진 탐색에 대해 알아보기 전에 가장 기본 탐색 방법인 순차 탐색에 대해 먼저 이해할 필요가 있다. 1장부터 차례대로 읽은 독자라면 이미 자연스럽게 순차 탐색의 원리를 익혔다. 사실 지금까지 예제 문제에서 N개의 데이터가 있을 때, 그 데이터를 차례대로 하나씩 확인하여 어떠한 처리를 해준 경우가 많았는데 그 자체로도 이미 순차 탐색이라고 할 수 있다. 예를 들어 3장의 ‘거스름돈’ 문제에서 가장 큰 화폐 단위부터 확인(탐색)해서 각 단위에 대하여 처리한 것을 기억해보자.</p>
+<p>이와 같이 순차 탐색$^{Sequential Search}$이란 리스트 안에 있는 특정한 데이터를 찾기 위해 앞에서부터 데이터를 하나씩 차례대로 확인하는 방법이다. 보통 정렬되지 않은 리스트에서 데이터를 찾아야 할 때 사용한다. 리스트 내에 데이터가 아무리 많아도 시간만 충분하다면 항상 원하는 원소(데이터)를 찾을 수 있다는 장점이 있다. 다음은 순차 탐색으로 Dongbin을 찾는 과정이다.</p>
 <ul>
-<li>첫째 줄에 숫자 카드들이 놓인 행의 개수 N과 열의 개수 M이 공백을 기준으로 하여 각각 자연수로 주어진다.(1 &lt;= N, M &lt;= 100)</li>
-<li><p>둘째 줄부터 N개의 줄에 걸쳐 각 카드에 적힌 숫자가 주어진다. 각 숫자는 1 이상 10,000 이하의 자연수이다</p>
-</li>
-<li><p>첫째 줄에 게임의 룰에 맞게 선택한 카드에 적힌 숫자를 출력한다</p>
-<pre><code>@time_count
-def count_min(N, M, ls):
-    min_n = 0
-    min_count = 0
-    for i in range(N):
-        m = min(ls[i])
-        if min_n &lt; m:
-            min_n = m
-            min_count = i
-    return(min(ls[min_count]))
-
-def count_min_0(N, M, ls):
-    result = 0
-
-    for i in range(N):
-        data = ls[i]
-
-        min_value = 10001
-        for a in data:
-            min_value = min(min_value, a)
-
-        result = max(result, min_value)
-
-    return result
-
-count_min(2, 4, [[7,3,1,8], [3,3,3,4]])
-</code></pre></li>
+<li>step 0 : 초기 단계</li>
 </ul>
-<p>3<br>걸린 시간 :  0.0</p>
-<h2 id="1이-될-때까지"><a href="#1이-될-때까지" class="headerlink" title="1이 될 때까지"></a>1이 될 때까지</h2><p>어떠한 수 N이 1이 될 때까지 다음의 두 과정 중 하나를 반복적으로 선택하여 수행하려고 한다. 단, 두 번쨰 연산은 N이 나누어떨어질 떄만 선택할 수 있다.</p>
-<ol>
-<li>N에서 1을 뺀다</li>
-<li>N을 K로 나눈다.</li>
-</ol>
-<hr>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Haaneul</th>
+<th style="text-align:center">Jonggu</th>
+<th style="text-align:center"><strong>Dongbin</strong></th>
+<th style="text-align:center">Taeil</th>
+<th style="text-align:center">Sangwook</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+</div>
 <ul>
-<li><p>첫째 줄에 N(2 &lt;= N &lt;= 100,000)과 K(2 &lt;= K &lt;= 100,000)가 공백으로 구분되며 각각 자연수로 주어진다. 이때 입력으로 주어지는 N은 항상 K보다 크거나 같다.</p>
-</li>
-<li><p>첫째 줄에 N이 1이 될 때까지 1번 혹은 2번의 과정을 수행해야 하는 횟수의 최솟값을 출력한다.</p>
-<pre><code>def count_1(num, K):
-    count = 0
-    while True:
-        if num % K == 0:
-            num = num / K
-            count += 1
-        else:
-            num -= 1  # k가 클경우 많은 연산이 소모될 수 있다.
-            count += 1
-        if num == 1:
-            break
-    return count
-
-def count_1_0(n, K):
-    result = 0
-
-    while True:
-        target = (n // K) * K
-        result += (n - target)
-        n = target
-
-        if n &lt; K:
-            break
-
-        result += 1
-        n //= K
-    result += (n - 1)
-    print(result)
-
-count_1_0(25, 3)
-</code></pre></li>
+<li>step 1 : 가장 먼저 첫 번째 데이터를 확인한다. Haneul은 찾고자 하는 문자열과 같지 않다. 따라서 다음 데이터로 이동한다.</li>
 </ul>
-<p>6</p>
-<h2 id="평가"><a href="#평가" class="headerlink" title="평가"></a>평가</h2><p>대부분 무난하게 해결했지만, 나누기 및 나머지 연산의 순서와 변수명 설정의 규칙성이 부족하여 코드가 중구난방한 느낌을 받았다.</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Haaneul</th>
+<th style="text-align:center">Jonggu</th>
+<th style="text-align:center"><strong>Dongbin</strong></th>
+<th style="text-align:center">Taeil</th>
+<th style="text-align:center">Sangwook</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">\</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>step 2 : 두 번째 데이터를 확인한다. Jonggu는 찾고자 하는 문자열과 같지 않다. 다음 데이터로 이동한다.</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Haaneul</th>
+<th style="text-align:center">Jonggu</th>
+<th style="text-align:center"><strong>Dongbin</strong></th>
+<th style="text-align:center">Taeil</th>
+<th style="text-align:center">Sangwook</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">\</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>step 3 : 세 번째 데이터를 확인한다. Dongbin은 찾고자 하는 문자열과 같으므로 탐색을 마친다.</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Haaneul</th>
+<th style="text-align:center">Jonggu</th>
+<th style="text-align:center"><strong>Dongbin</strong></th>
+<th style="text-align:center">Taeil</th>
+<th style="text-align:center">Sangwook</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">\</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>순차 탐색은 이름처럼 순차로 데이터를 탐색한다는 의미이다. 리스트의 데이터에 하나씩 방문하며 특정한 문자열과 같은지 검사하므로 구현도 간단하다. 순차 탐색은 정말 자주 사용되는데, 리스트에 특정 값의 원소가 있는지 체크할 때도 순차 탐색으로 원소를 확인하고, 리스트 자료형에서 특정한 값을 가지는 원소의 개수를 세는 count() 메서드를 이용할 때도 내부에서는 순차 탐색이 수행된다. 순차 탐색을 파이썬 코드로 작성하면 다음과 같다.</p>
+<pre><code>def sequential_search(n, target, array):
+    for i in range(n):
+        if array[i] == target:
+            return i + 1
+
+print(&quot;생성할 원소 개수를 입력한 다음 한 칸 띄고 찾을 문자열을 입력하세요.&quot;)
+input_data = input().split()
+n = int(input_data[0])
+target = input_data[1]
+
+print(&quot;앞서 적은 원소 개수만큼 문자열을 입력하세요. 구분은 띄어쓰기 한 칸으로 합니다.&quot;)
+array = input().split()
+
+print(sequential_search(n, target, array))
+</code></pre><p>생성할 원소 개수를 입력한 다음 한 칸 띄고 찾을 문자열을 입력하세요.<br>5 Dongbin<br>앞서 적은 원소 개수만큼 문자열을 입력하세요. 구분은 띄어쓰기 한 칸으로 합니다.<br>Hanul Jonggu Dongbin Taeil Sangwook<br>3</p>
+<p>소스코드를 실행하면 정상적으로 이름 문자열이 몇 번째 데이터인지 출력하는 것을 알 수 있다. 이처럼 순차 탐색은 데이터 정렬 여부와 상관없이 가장 앞에 있는 원소부터 하나씩 확인해야 한다는 점이 특징이다. 따라서 데이터의 개수가 N개일 때 최대 N번의 비교 연산이 필요하므로 순차 탐색의 최악의 경우 시간 복잡도는 O(N)이다.</p>
+<h3 id="이진-탐색-반으로-쪼개면서-탐색하기"><a href="#이진-탐색-반으로-쪼개면서-탐색하기" class="headerlink" title="이진 탐색 : 반으로 쪼개면서 탐색하기"></a>이진 탐색 : 반으로 쪼개면서 탐색하기</h3><p>드디어 본론인 이진 탐색을 공부해보자. 이진 탐색$^{Binary Search}$은 배열 내부의 데이터가 정렬되어 있어야만 사용할 수 있는 알고리즘이다. 데이터가 무작위일 때는 사용할 수 없지만, 이미 정렬되어 있다면 매우 빠르게 데이터를 찾을 수 있다는 특징이 있다. 이진 탐색은 범위를 절반씩 좁혀가며 데이터를 탐색하는 특징이 있다.</p>
+<p>이진 탐색은 위치를 나타내는 변수 3개를 사용하는데 탐색하고자 하는 범위읭 시작점, 끝점, 그리고 중간점이다. 찾으려는 데이터와 중간점$^{Middle}$ 위치에 있는 데이터를 반복적으로 비교해서 원하는 데이터를 찾는 게 이진 탐색 과정이다.</p>
+<p>이미 정렬된 10개의 데이터 중에서 값이 4인 원소를 찾는 예시를 살펴보자.</p>
+<ul>
+<li>step 1 : 시작점과 끝점을 확인한 다음 둘 사이에 중간점을 정한다. 중간점이 실수일 때는 소수점 이하를 버린다. 그림에서 각각의 인덱스는 시작점은 [0], 끝점은 [9], 중간점은 (4.5에서 소수점 이하를 버려서) [4]이다. 다음으로 중간점 [4]의 데이터 8과 찾으려는 데이터 4를 비교한다. 중간점의 데이터 8이 더 크므로 중간점 이후의 값은 확인할 필요가 없다. 끝점을 [4]의 이전인 [3]으로 옮긴다.</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">0</th>
+<th style="text-align:center">2</th>
+<th style="text-align:center">4</th>
+<th style="text-align:center">6</th>
+<th style="text-align:center">Sangwook</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">\</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+</div>
 
       
        <hr><span style="font-style: italic;color: gray;"> 여기가 끝입니다. </span>
@@ -990,12 +988,12 @@ count_1_0(25, 3)
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">문서제목:</span>01_그리드</p>
+    <p><span class="copy-title">문서제목:</span>05_이진_탐색</p>
     
     <p><span class="copy-title">본문저자:</span><a href="javascript:void(0)" title="이재근">이재근</a></p>
-    <p><span class="copy-title">작성시간:</span>2021-02-10, 19:50:43</p>
-    <p><span class="copy-title">최후수정:</span>2021-03-08, 08:41:50</p>
-    <span class="copy-title">원본링크:</span><a class="post-url" href="/2021/02/11/%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-01-%EA%B7%B8%EB%A6%AC%EB%93%9C/" title="01_그리드">http://leejaekeun14.github.io/2021/02/11/%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-01-%EA%B7%B8%EB%A6%AC%EB%93%9C/</a>
+    <p><span class="copy-title">작성시간:</span>2021-03-22, 16:53:22</p>
+    <p><span class="copy-title">최후수정:</span>2021-03-22, 14:26:12</p>
+    <span class="copy-title">원본링크:</span><a class="post-url" href="/2021/03/23/%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-05-%EC%9D%B4%EC%A7%84-%ED%83%90%EC%83%89/" title="05_이진_탐색">http://leejaekeun14.github.io/2021/03/23/%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-05-%EC%9D%B4%EC%A7%84-%ED%83%90%EC%83%89/</a>
 </div>
 
 
