@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>쿼리문_응용 | Lee&#39;s Atelier</title>
-  <meta name="keywords" content=" Database , MySQL ">
-  <meta name="description" content="쿼리문_응용 | Lee&#39;s Atelier">
+  <title>06_다이나믹_프로그래밍 | Lee&#39;s Atelier</title>
+  <meta name="keywords" content=" 코딩테스트 ">
+  <meta name="description" content="06_다이나믹_프로그래밍 | Lee&#39;s Atelier">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="of the Coding, by the Coding, for the Coding Atrlier">
 <meta property="og:type" content="website">
@@ -779,9 +779,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Database-RDBMS-쿼리문-응용" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-코딩테스트-06-다이나믹-프로그래밍" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">쿼리문_응용</h1>
+        <h1 class="article-title">06_다이나믹_프로그래밍</h1>
     
     <div class="article-meta">
         
@@ -789,25 +789,21 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="Database">Database</a>/
-            
-                <a href="javascript:" data-rel="RDBMS">RDBMS</a>
+                <a href="javascript:" data-rel="코딩테스트">코딩테스트</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color4">Database</a>
-            
-            <a href="javascript:" class="color1">MySQL</a>
+            <a href="javascript:" class="color1">코딩테스트</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        작성시간:<time class="date" title='更新时间: 2019-11-17 11:12:38'>2019-11-04 14:09</time>
+        작성시간:<time class="date" title='更新时间: 2021-03-27 11:37:38'>2021-03-27 15:19</time>
         
     </div>
     <div class="article-meta">
@@ -829,7 +825,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL"><span class="toc-text">MySQL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#쿼리문-응용"><span class="toc-text">쿼리문_응용</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-CEIL-ROUND-TRUNCATE"><span class="toc-text">1.CEIL, ROUND, TRUNCATE</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Conditional"><span class="toc-text">2.Conditional</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-DATE-FORMAT"><span class="toc-text">3.DATE_FORMAT</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-JOIN"><span class="toc-text">4.JOIN</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-UNION"><span class="toc-text">5.UNION</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-Sub-Query"><span class="toc-text">6.Sub-Query</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-Index"><span class="toc-text">7.Index</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-View"><span class="toc-text">8.View</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-다이나믹-프로그래밍"><span class="toc-text">1. 다이나믹 프로그래밍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#중복되는-연산을-줄이자"><span class="toc-text">중복되는 연산을 줄이자</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#다이나믹-프로그래밍과-동적-할당의-다이나믹은-같은-의미일까"><span class="toc-text">다이나믹 프로그래밍과 동적 할당의 다이나믹은 같은 의미일까?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-10-은"><span class="toc-text">2$^10$은?</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -845,289 +841,41 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2><ul>
-<li>쿼리문_응용<ul>
-<li>1.CEIL, ROUND, TRUNCATE</li>
-<li>2.Conditional</li>
-<li>3.DATE_FORMAT</li>
-<li>4.JOIN</li>
-<li>5.UNION</li>
-<li>6.Sub-Query</li>
-<li>7.Index</li>
-<li>8.View</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="쿼리문-응용"><a href="#쿼리문-응용" class="headerlink" title="쿼리문_응용"></a>쿼리문_응용</h3><h4 id="1-CEIL-ROUND-TRUNCATE"><a href="#1-CEIL-ROUND-TRUNCATE" class="headerlink" title="1.CEIL, ROUND, TRUNCATE"></a>1.CEIL, ROUND, TRUNCATE</h4><ul>
-<li><p>1.1 CEIL<br>   CEIL는 실수 데이터를 올림 할 때 사용합니다.</p>
-<p>   <code>12.345를 올림하여 정수로 나타냄</code></p>
-<pre><code>   SELECT CEIL(12.345)
-</code></pre><p>   <code>국가별 언어 사용 비율을 소수 첫번째자리에서 올림하여 정수로 나타냄</code></p>
-<pre><code>   SELECT CountryCOde, Language, Percentage, CEIL(Percentage)
-   FROM countrylanguage
-</code></pre></li>
-</ul>
-<hr>
+        <h2 id="1-다이나믹-프로그래밍"><a href="#1-다이나믹-프로그래밍" class="headerlink" title="1. 다이나믹 프로그래밍"></a>1. 다이나믹 프로그래밍</h2><h3 id="중복되는-연산을-줄이자"><a href="#중복되는-연산을-줄이자" class="headerlink" title="중복되는 연산을 줄이자"></a>중복되는 연산을 줄이자</h3><p>현실 세계에는 다양한 문제가 있다. 그런데 이 중에서 컴퓨터를 활용해도 해결하기 어려운 문제는 무엇일까? 최적의 해를 구하기에 시간이 매우 많이 필요하거나 메모리 공간이 매우 많이 필요한 문제 등이 컴퓨터로도 해결하기 어려운 문제이다. 컴퓨터는 연산 속도에 한계가 있고, 메모리 공간을 사용할 수 있는 데이터의 개수도 한정적이라는 점이 많은 제약을 발생시킨다. 그래서 우리는 연산 속도와 메모리 공간을 최대한으로 활용할 수 있는 효율적인 알고리즘을 작성해야 한다.(해결하기 어려운 문제에 대해서 깊게 다루는 분야로는 계산 복잡도 이론이 있다. 이 부분에 대해서 깊게 공부하기 위해서는 P-NP문제를 다루는 계산 복잡도 이론에 대해 공부해보는 것을 추천한다.)</p>
+<p>다만, 어떤 문제는 메모리 공간을 약간 더 사용하면 연산 속도를 비약적으로 증가시킬 수 있는 방법이 있다. 대표적인 방법이 바로 이번 장에서 다루는 다이나믹 프로그래밍$^{Dynamic Programming}$ 기법으로 동적 계획법이라고 표현하기도 한다. 머넞 다이나믹 프로그래밍의 기본적인 아이디어를 소개한 뒤에, 다이나믹 프로그래밍의 2가지 방식(탑다운과 보텀업)을 설명할 것이다. 특히 다이나믹 프로그래밍을 위해 자주 사용되는 메몰이제이션 기법까지 소개하겠다.</p>
+<h4 id="다이나믹-프로그래밍과-동적-할당의-다이나믹은-같은-의미일까"><a href="#다이나믹-프로그래밍과-동적-할당의-다이나믹은-같은-의미일까" class="headerlink" title="다이나믹 프로그래밍과 동적 할당의 다이나믹은 같은 의미일까?"></a>다이나믹 프로그래밍과 동적 할당의 다이나믹은 같은 의미일까?</h4><p>지금까지 다룬 알고리즘은 이름으로 동작 과정을 유추할 수 있었지만 다이나믹 프로그래밍은 감이 오지 않을 것이다. 프로그래밍에서 다이나믹은 프로그램이 실행되는 도중에 라는 의미이다. 예를 들어 자료구조에서 동적 할당(Dynamic Allocation)은 프로그램 실행 중에 프로그램 실행에 필요한 메모리를 할당하는 기법이다. 하지만 다이나믹 프로그래밍에서의 ‘다이나믹’은 이런 의미가 아니라는 것 정도만 기억하자.</p>
+<p>다이나믹 프로그래밍에 대해 알아보기 정에 기존의 알고리즘으로 해결하기 어려운 문제 중에서 다이나믹 프로그래밍으로 해결할 수 있는 문제를 살펴보자.</p>
+<p>다이나믹 프로그래밍으로 해결할 수 있는 대표적인 예시로 피보나치 수열이 있다. 피보나치 수열은 이정 두 항의 합을 현재의 항으로 설정하는 특징이 있는 수열이다. 피보니치 수열은 다음과 같은 형태로 끝없이 이어진다.</p>
 <ul>
-<li><p>1.2 ROUND<br>   ROUND는 실수데이터를 반올림 할 때 사용합니다.</p>
-<p>   <code>12.345를 소수 둘째자리까지 나타내고 소수 셋째자리에서 반올림</code></p>
-<pre><code>   SELECT ROUND(12.345, 2)
-</code></pre><p>   <code>국가별 언어 사용 비율을 소수 첫번째 자리에서 반올림하여 정수로 나타냄</code></p>
-<pre><code>   SELECT CountryCode, Language, Percentage, ROUND(Percentage, 0)
-   FROM countrylanguage
-</code></pre></li>
+<li>1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89</li>
 </ul>
-<hr>
+<p>수학자들은 점화식을 사용해 수열의 항이 이어지는 현태를 간결하게 표현한다. 점화식이란 인접한 항들 사이의 계식을 의미하는데, 예를 들어 수열 {$a_n$}이 있을 때 수열에서의 각 항을 $a_n$이라고 부른다고 가정하자. 우리는 점화식을 이용해 현재의 항을 이전의 항에 대한 식으로 표현할 수 있다. 예를 들어 피보나치 수열의 점화식은 다음과 같이 표현할 수 있다.</p>
+<script type="math/tex; mode=display">a_{n+2} = f(a_{n+1}, a_n) = a_{n+1} + a_n</script><p>이러한 점화식은 인접 3항간 점화식이라고 부르는 데 인접한 총 3개의 항에 대해서 식이 정의되기 때문이다. 이를 해석하면 다음과 같다.</p>
 <ul>
-<li><p>1.3 TRUNCATE<br>   TRUNCATE는 실수 데이터를 버림 할 때 사용합니다.</p>
-<p>   <code>12.345를 소수 둘째자리까지 나타내고 소수 셋째자리에서 버림</code></p>
-<pre><code>   SELECT TRUNCATE(12.345, 2)
-</code></pre><p>   <code>국가별 언어 사용 비율을 소수 첫번째자리에서 버림하여 정수로 나타냄</code></p>
-<pre><code>   SELECT CountryCode, Language, Percentage, TRUNCATE(Percentage, 0)
-   FROM countrylanguage
-</code></pre></li>
+<li>n번째 피보나치 수 = (n - 1)번째 피보나치 수 + (n - 2)번째 피보나치 수</li>
+<li>단, 1번째 피보나치 수 = 1, 2 번째 피보나치 수 = 1</li>
 </ul>
-<hr>
-<h4 id="2-Conditional"><a href="#2-Conditional" class="headerlink" title="2.Conditional"></a>2.Conditional</h4><p>SQL 에서도 다른 언어에서 처럼 조건문 사용이 가능합니다. IF, CASE에 대해서 설명합니다.</p>
-<ul>
-<li><p>2.1 IF</p>
-<p>   <code>도시의 인구가 100만이 넘으면 &quot;big city&quot; 그렇지 않으면 &quot;small city&quot;를 출력하는 city_scale 칼럼을 추가</code></p>
-<pre><code>   SELECT name, population, IF(population &gt; 1000000, &quot;big city&quot;, &quot;small city&quot;) AS city_scale
-   FROM city
-</code></pre></li>
-<li><p>2.2 IFNULL</p>
-<p>   <code>독립년도가 없는 데이터는 0으로 출력</code></p>
-<pre><code>   SELECT name, IFNULL(IndepYear, 0) AS IndepYear
-   FROM country
-</code></pre></li>
-<li><p>2.3 CASE</p>
-<p>   <code>나라별로 인구가 10억 이상, 1억 이상, 1억 이하인 컬럼을 추가하여 출력</code></p>
-<pre><code>   SELECT name, population,
-      CASE
-          WHEN population &gt; 1000000000 THEN &quot;upper 1 bilion&quot;
-          WHEN population &gt; 100000000 THEN &quot;upper 100 minion&quot;
-          ELSE &quot;below 100 milion&quot;
-      END AS result
-   FROM country
-</code></pre></li>
-</ul>
-<hr>
-<h4 id="3-DATE-FORMAT"><a href="#3-DATE-FORMAT" class="headerlink" title="3.DATE_FORMAT"></a>3.DATE_FORMAT</h4><ul>
-<li><p>DATE_FORMAT은 날짜 데이터에 대한 포멧을 바꿔줍니다.<br>  <a href="https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html" target="_blank" rel="noopener">https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html</a></p>
-<p>   <code>sakila 데이터 베이스에서 월별 총 수입</code></p>
-<pre><code>   SELECT DATE_FORMAT(payment_date, &quot;%Y-%m&quot;) AS menthly, SUM(amount) AS amount
-   FROM payment
-   GROUP BY monthly
-</code></pre></li>
-</ul>
-<hr>
-<h4 id="4-JOIN"><a href="#4-JOIN" class="headerlink" title="4.JOIN"></a>4.JOIN</h4><p>JOIN은 여러개의 테이블에서 데이터를 모아서 보여줄 떄 사용됩니다. JOIN에는 INNER JOIN, LEFT JOIN, RIGHT JOIN이 있습니다.</p>
-<ul>
-<li><p>4.1 MAKE TEST TABLE &amp; DATA</p>
-<p>   <code>create table &amp; data</code></p>
-<pre><code>   CREATE TABLE user(
-       user_id int(11) unsigned NOT NULL AUTO_INCREMENT,
-       name varvhar(30) DEFAULT NULL,
-       PRIMARY KEY (user_id)
-   ) ENGINE = innoDB DEFAULT CHARSET = utf8;
+<p>프로그래밍에서는 이러한 수열을 배열이나 리스트로 표현할 수 있다. 수열 자체가 여러 개의 수가 규칙에 따라서 배열된 형태를 의미하는 것이기 때문이다. 파이썬에서는 리스트 자료형이 이를 처리하고, C/C++와 자바에서는 배열을 이용해 이를 처리한다. 리스트나 배열 모두 ‘연속된 많은 데이터’를 처리한다는 점은 동일하다.(파이썬의 경우 기본 자료형인 리스트 자료형이 연결 리스트의 기능을 포함하고 있는 점이 다른 프로그래밍 언어에서의 배열과 차이점이다.)</p>
+<p>그렇다면 이 점화식에 따라서 실제로 피보나치 수를 구하는 과정을 어떻게 표현할 수 있을까? n번째 피보나치 수를 f(n)이라고 표형할 때 4번째 피보나치 수 f(4)를 구하려면 다음과 같이 함수 f를 반복해서 호출할 것이다. 그런데 f(2)와 f(1)은 항상 1이기 때문에 f(1)이나 f(2)를 만났을 때는 호출을 정지한다.</p>
+<p>수학적 점화식을 프로그래밍으로 표현하면 재귀 함수를 사용하면 간단하다. 예시를 소스코드로 바꾸면 다음과 같다.</p>
+<pre><code>def fibo(x):
+    if x == 1 or x == 2:
+        return 1
+    return fibo(x - 1) + fibo(x - 2)
 
-   CREATE TABLE addr(
-       id int(11) unsigned NOT NULL AUTO_INCREMENT,
-       addr varchar(30) DEFAULT NULL,
-       user_id int(11) DEFAULT NULL,
-       PRIMARY KEY (id)
-   ) ENGINE = innoDB DEFAULT CHARSET = utf8;
-
-   INSERT INTO user(name)
-   VALUES (&quot;jin&quot;),
-   (&quot;po&quot;),
-   (&quot;alice&quot;),
-   (&quot;petter&quot;);
-
-   INSERT INTO addr*addr, user_id)
-   VALUES (&quot;seoul&quot;, 1),
-   (&quot;pudan&quot;, 2),
-   (&quot;deajeon&quot;, 3),
-   (&quot;deagu&quot;, 5),
-   (&quot;seoul&quot;, 6);
-</code></pre></li>
-</ul>
-<hr>
-<ul>
-<li><p>4.2 INNER JOIN</p>
-<p>   두 테이블 사이에 공통된 값이 없는 row는 출력하지 않는다.</p>
-<p>   <code>두 테이블을 합쳐 id, name, addr 출력</code></p>
-<pre><code>   SELECT id, user.name, addr.addr
-   FROM user
-   JOIN addr
-   ON user.user_id = addr.user_id
-</code></pre><p>   <code>world 데이터베이스에서 도시이름과 국가이름을 출력</code></p>
-<pre><code>   SELECT country.name AS city_name, city.name AS country_name
-   FROM city
-   JOIN country
-   ON city.COuntryCode = country.code
-</code></pre></li>
-</ul>
-<hr>
-<ul>
-<li><p>4.3 LEFT JOIN</p>
-<p>   왼쪽 테이블을 기준으로 왼쪽 테이블의 모든 데이터가 출력되고 매핑되는 키값이 없으면 NULL로 출력된다.</p>
-<p>   <code>두 테이블을 합쳐 id, name, addr출력</code></p>
-<pre><code>   SELECT id, user.name, addr.addr
-   FROM user
-   LEFT JOIN addr
-   ON user.user_id = addr.addr_id
-</code></pre></li>
-</ul>
-<hr>
-<ul>
-<li><p>4.4 RIGHT JOIN</p>
-<p>   오른쪽 테이블을 기준으로 왼쪽 테이블의 모든 대이터가 출력되고 매핑되는 키값이 없으면 NULL로 출력한다.</p>
-<p>   <code>두 테이블을 합쳐 id, name, addr출력</code></p>
-<pre><code>   SELECT id, user.name, addr.addr
-   FROM user
-   RIGHT JOIN addr
-   ON user.user_id = addr.addr_id
-</code></pre></li>
-</ul>
-<hr>
-<h4 id="5-UNION"><a href="#5-UNION" class="headerlink" title="5.UNION"></a>5.UNION</h4><p>UNION은 SELECT문의 결과 데이터를 하나로 합쳐서 출력합니다. 컬럼의 갯수와 타입, 순서가 같아야 합니다.</p>
-<p>UNION은 자동으로 distinct를 하여 중복을 제거해 줍니다. 중복제거를 안하고 컬럼 데이터를 합치고 싶으면 UNION ALL을 사용합니다.</p>
-<p>또한 UNION을 사용하면 Full Outer Join을 구현할 수 있습니다.</p>
-<ul>
-<li><p>5.1 UNION</p>
-<p>   <code>user 테이블의 name 칼럼과 addr 테이블의 addr 컬럼의 데이터를 하나로 합쳐서 출력</code></p>
-<pre><code>   SELECT name
-   FROM user
-   UNION
-   SELECT addr
-   FROM addr
-</code></pre></li>
-</ul>
-<hr>
-<ul>
-<li><p>5.2 UNION ALL</p>
-<p>   <code>중복데이터를 제거하지 않고 결과 데이터 합쳐서 출력</code></p>
-<pre><code>   SELECT name
-   FROM user
-   UNION ALL
-   SELECT addr
-   FROM addr
-</code></pre></li>
-</ul>
-<hr>
-<ul>
-<li><p>5.3 FULL OUTER JOIN</p>
-<p>   <code>union을 이용하여 full outer join 구현</code></p>
-<pre><code>   SELECT id, user.name, addr.addr
-   FROM user
-   LEFT JOIN addr
-   ON user.user_id = addr.user_id
-   UNION
-   SELECT id, user.name, addr.addr
-   FROM user
-   RIGHT JOIN addr
-   ON user.user_id = addr.user_id
-</code></pre></li>
-</ul>
-<hr>
-<h4 id="6-Sub-Query"><a href="#6-Sub-Query" class="headerlink" title="6.Sub-Query"></a>6.Sub-Query</h4><ul>
-<li><p>Sub query는 query문 안에 있는 query를 의미합니다. SELECT절 FROM절, WHERE절 등에 사용이 가능합니다.</p>
-<p>   <code>전체 나라수, 전체 도시수, 전체 언어수를 출력(SELECT 절에 사용)</code></p>
-<pre><code>   SELECT
-      (SELECT count(name) FROM city) AS total_city,
-      (SELECT count(name) FORM country) AS total_country,
-      (SELECT count(DISTINCT(Language)) FROM countrylanguage) AS total_language
-   FROM DUAL
-</code></pre><p>   <code>800만 이상되는 도시의 국가코드, 이름, 도시인구수를 출력(FROM 절에 사용</code></p>
-<pre><code>   SELECT *
-   FROM
-      (SELECT countrycode, name, population
-      FROM city
-      WHERE population &gt; 8000000) AS city
-   JOIN
-      (SELECT code, name
-      FROM country) AS country
-   ON city.countrycode = country.code
-</code></pre><p>   <code>800만 이상 도시의 국가코드, 국가이름, 대통령이름을 출력(WHERE 절에 사용</code></p>
-<pre><code>   SELEC code, name, HeadOfState
-   FROM country
-   WHERE code IN (
-       SELECT DISTINCT(countrycode) FROM city WHERE population &gt; 8000000
-   )
-</code></pre></li>
-</ul>
-<hr>
-<h4 id="7-Index"><a href="#7-Index" class="headerlink" title="7.Index"></a>7.Index</h4><p>테이블에서 데이터를 검색할때 빠르게 찾을 수 있도록 해주는 기능입니다. where 절에 들어가는 컬럼을 index로 설정해 놓으면 설정한 컬럼을 조건으로 검색할때 빠르게 검색할 수 있습니다. 자주 검색하는 조건은 index로 설정해 놓으면 좋지만 너무 많은 인덱스가 설정되게 되면 데이터가 입력 될때마다 index에 데이터를 넣어야 함으로 데이터 입력시 속도가 느려질 수 있습니다. 그러므로 인덱스는 검색 조건으로 자주 사용하는 컬럼에 설정해 놓으면 좋습니다.</p>
-<ul>
-<li><p>7.1 syntax</p>
-<pre><code>   CREATE INDEX 인덱스이름
-   ON 테이블이름 (컬럼이름1, 컬럼이름2)
-</code></pre></li>
-<li><p>7.2 example</p>
-<p>   <code>city 테이블에 population 컬럼을 인덱스로 추가</code></p>
-<pre><code>   CREATE INDEX Population
-   ON city (Population)
-</code></pre><p>   <code>city 테이블에 Population 인덱스 제거</code></p>
-<pre><code>   DROP INDEX Population
-   ON city
-</code></pre></li>
-<li><p>7.3 explain</p>
-<p>   query를 실행하기 전에 index로 검색을 하는지 확인 할 수 있습니다.</p>
-<p>   <code>100만이 넘는 도시의 데이터를 출력의 실핼계획을 확인</code></p>
-<pre><code>   EXPLAIN
-   SELECT *
-   FROM city
-   WHERE populaion &gt; 1000000
-</code></pre><p>   Extra 칼럼에 index가 없으면 Using where로 검색이 되지만 index가 있으면 Using index로 검색됨을 확인할 수 있습니다.</p>
-<p>   Type 컬럼의 값이 ALL이면 index를 사용하지 않고 있다는 의미 입니다.</p>
-<p>   <code>검색 절차</code><br>   스토리지(index + Data) $\to$ (rows) $\to$ Mysql 엔진(필터링 전) $\to$ (filtered) $\to$ Mydql 엔진(필터링 후)</p>
-</li>
-<li><p>7.4 emplyees의 salaries로 테스트</p>
-<p>   <code>salaries 테이블에 from_date 칼럼을 인덱스로 설절</code></p>
-<pre><code>   CREATE INDEX fdate
-   ON salaries(from_date)
-</code></pre><p>   <code>실행계획 확인 및 쿼리 실행</code></p>
-<pre><code>   EXPLAIN
-   SELECT *
-   FROM salaries
-   WHERE from_date &lt; &quot;1985-02-01&quot;
-</code></pre><p>   <code>salaries 테이블에 fdate인덱스 제거</code></p>
-<pre><code>   DROP INDEX fdate
-   ON salaries
-</code></pre><p>   <code>여러개의 조건을 인덱스로 설정</code><br>   <code>여러개의 조건이 올때는 여러개의 컬럼을 함께 인덱스로 사용하는게 좋음</code></p>
-<pre><code>   CREATE INDEX ftdate
-   ON salaries (from_date, to_date)
-</code></pre><p>   <code>실행계획 확인 및 쿼리 실행</code></p>
-<pre><code>   EXPLAIN
-   SELECT *
-   FROM salaries
-   WHERE from_date &lt; &quot;1985-02-01&quot; AND to_date &lt; &quot;1990-01-01&quot;
-</code></pre><p>   <code>salaries 테이블에 ftdate인덱스 제거</code></p>
-<pre><code>   DROP INDEX ftdate
-   ON salaries
-</code></pre></li>
-</ul>
-<hr>
-<h4 id="8-View"><a href="#8-View" class="headerlink" title="8.View"></a>8.View</h4><p>가상 테이블로 특정 데이터만 보고자 할때 사용합니다. 실제 데이터를 저장하고 있지는 않습니다. 한마디로 특정 칼럼의 데이터를 보여주는 역활만 합니다. 뷰를 사용 함으로 쿼리를 더 단순하게 만들 수 있습니다. 한번 생성된 뷰는 수정이 불가능 하여 인덱스 설정이 불가능 합니다.</p>
-<ul>
-<li><p>8.1 syntax</p>
-<pre><code>   CREATE VIEW &lt;뷰이름&gt; AS
-   (QUERY)
-</code></pre></li>
-<li><p>8.2 example</p>
-<p>   <code>국가코드와 국가이름이 있는 뷰 생성</code></p>
-<pre><code>   CREATE VIEW code_name AS
-   SELECT code, name
-   FROM country
-</code></pre><p>   <code>city 체이블에 국가 이름 추가</code></p>
-<pre><code>   SELECT *
-   FROM city
-   JOIN code_name
-   ON city.countrycode = code_name.code
-</code></pre></li>
-</ul>
+print(fibo(4))
+</code></pre><p>3</p>
+<p>그런데 피보나치 수열의 소스코드를 이렇게 작성하면 심각한 문제가 생길 수 있다. 바로 f(n) 함수에서 n이 커지면 커질수록 수행 시간이 기하급수적으로 늘어나기 때문이다. 이 소스코드의 시간 복잡도는, 엄밀히 말하면 피보나치 수열의 정확한 시간 복잡도는 세타 표기법을 사용하여 $\theta(1.618\cdots^N)$으로 표현할 수 있다. 하지만 일반적으로는 빅오 표기법을 이용하여 O($2^N$)의 지수 시간이 소요된다고 표현한다. 예를 들어 N = 30이면, 약 10억 가량의 연산을 수행해야 한다. f(6)일 때의 호출 과정을 그림으로 그려 확인해보자.</p>
+<p><img src="img/코딩테스트/06_다이나믹_프로그래밍_001.PNG" alt=" "></p>
+<p>그림을 보면 동일한 함수가 반복적으로 호출되는 것을 알 수 있다. 이미 한 번 계산했지만, 계속 호출할 때마다 계산하는 것이다. 그림에서 f(3)이 몇 번 호출되었는가? f(3)은 총 3번 호출되었다. 즉, f(n)에서 n이 커지면 커질수록 반복해서 호출하는 수가 많아진다. 예를 들어 f(100)을 계산하려면 얼마나 많은 연산을 해야 할까? 2$^10$을 약 1,000이라고 했을 때, 연산 횟수는 약 10$^30$번이다. 아마 현대의 2진수 처리 방식을 가진 컴퓨터 구조에 기반한 시스템에서 연산을 수행했을 때 우리의 수명이 다할 때까지 연산을 진행해도 답을 도출할 수 없을 것이다.</p>
+<h4 id="2-10-은"><a href="#2-10-은" class="headerlink" title="2$^10$은?"></a>2$^10$은?</h4><p>2$^10$은 1,024(약 1,000)인데, 시간 복잡도 O(2$^N$)인 상황에서 N이 100이라면 저 정도의 큰 수가 나온다. 일반적인 컴퓨터가 1초에 1억 번 정도의 연산을 한다고 하면 이 수치만으로도 수백억 년을 넘어간다.</p>
+<p>이처럼 피보나치 수열의 점화식을 재귀 함수를 사용해 만들 수는 있지만, 단순히 매번 계산하도록 하면 문제를 효율적으로 해결할 수 없다. 이러한 문제는 다이나믹 프로그래밍을 사용하면 효율적으로 해결할 수 있다. 다만 항상 다이나믹 프로그래밍을 사용할 수는 없으며, 다음 조건을 만족할 때 사용할 수 있다.</p>
+<ol>
+<li>큰 문제를 작은 문제로 나눌 수 있다.</li>
+<li>작은 문제에서 구한 정답은 그것을 포함하는 큰 문제에서도 동일하다.</li>
+</ol>
+<p>피보나치 수열은 이러한 조건을 만족하는 대표 문제이다. 이 문제를 메모이제이션$^{Memoization}$ 기법을 사용해서 해결해보자. 메모이제이션은 다이나믹 프로그래밍을 구현하는 방법 중 한 종류로, 한 번 구한 결과를 메모리 공간에 메모해두고 같은 식을 다시 호출하면 메모한 결과를 그대로 가져오는 기법을 의미한다. 메모이제이션은 값을 저장하는 방법이므로 캐싱$^{Caching}$이라고도 한다.</p>
+<p>그렇다면 실제로 메모이제이션은 어떻게 구현될 수 있을까? 단순하다. 한 번 구한 정보를 리스트에 저장하는 것니다. 다이나믹 프로그래밍을 재귀적으로 수행하다가 같은 정보가 필요할 때는 이미 구한 정답을 그대로 리스트에서 가져오면 된다. 이를 소스코드로 나타내면 다음과 같다.</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 여기가 끝입니다. </span>
@@ -1137,12 +885,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">문서제목:</span>쿼리문_응용</p>
+    <p><span class="copy-title">문서제목:</span>06_다이나믹_프로그래밍</p>
     
     <p><span class="copy-title">본문저자:</span><a href="javascript:void(0)" title="이재근">이재근</a></p>
-    <p><span class="copy-title">작성시간:</span>2019-11-04, 14:09:53</p>
-    <p><span class="copy-title">최후수정:</span>2019-11-17, 11:12:38</p>
-    <span class="copy-title">원본링크:</span><a class="post-url" href="/2019/11/04/Database-RDBMS-%EC%BF%BC%EB%A6%AC%EB%AC%B8-%EC%9D%91%EC%9A%A9/" title="쿼리문_응용">http://leejaekeun14.github.io/2019/11/04/Database-RDBMS-%EC%BF%BC%EB%A6%AC%EB%AC%B8-%EC%9D%91%EC%9A%A9/</a>
+    <p><span class="copy-title">작성시간:</span>2021-03-27, 15:19:36</p>
+    <p><span class="copy-title">최후수정:</span>2021-03-27, 11:37:38</p>
+    <span class="copy-title">원본링크:</span><a class="post-url" href="/2021/03/28/%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-06-%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/" title="06_다이나믹_프로그래밍">http://leejaekeun14.github.io/2021/03/28/%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-06-%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/</a>
 </div>
 
 
